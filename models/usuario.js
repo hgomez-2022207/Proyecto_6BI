@@ -1,7 +1,7 @@
 const {Schema, model} = require('mongoose');
-const { boolean } = require('webidl-conversions');
+//const { boolean } = require('webidl-conversions');
 
-const usuarioSchema = Schema({
+const UsuarioSchema = Schema({
     nombre:{
         type:String,
         required:['Nombre del usuario']
