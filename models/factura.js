@@ -34,4 +34,4 @@ facturaSchema.methods.toJSON = function(){
     return factura;
 };
 
-module.exports = model('Producto', facturaSchema);
+module.exports = model('Factura', facturaSchema);
