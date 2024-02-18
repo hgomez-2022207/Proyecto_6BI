@@ -4,3 +4,5 @@ const {check} = require('express-validator');
 const {} = require('../controllers/usuario.controller');
 
 const router = Router();
+
+module.exports = router;

@@ -25,11 +25,11 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.adminPath, require('../routers/usuario.routes'));
+        this.app.use(this.adminPath, require('../routers/usuario.routes.js'));
     }
 
     listen(){
-        this.app.listen(yhis.port, () => {
+        this.app.listen(this.port, () => {
             console.log('Servidor Ejecutandose y escuchando el puerto',this.port)
         });
     }
