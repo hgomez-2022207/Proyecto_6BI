@@ -7,6 +7,10 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
         this.adminPath = '/api/usuario';
+        this.adminPath = '/api/categorias';
+        this.adminPath = '/api/factura';
+        this.adminPath = '/api/productos';
+
 
         this.conectarDB();
         this.middlewares();
@@ -25,7 +29,10 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.adminPath, require('../routers/usuario.routes.js'));
+        this.app.use(this.adminPath, require('../routers/usuario.routes.js')),
+        this.app.use(this.adminPath, require('../routers/categoria.routes.js')),
+        this.app.use(this.adminPath, require('../routers/productos.routes.js')),
+        this.app.use(this.adminPath, require('../routers/factura.routes.js'));
     }
 
     listen(){

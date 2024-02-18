@@ -1,5 +1,5 @@
 const bcryptjs = require('bcryptjs');
-const Usuario = require('../models/Categoria');
+const Categoria = require('../models/categoria');
 const { response } = require('express');
 
 module.exports = {
