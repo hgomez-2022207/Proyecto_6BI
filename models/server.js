@@ -25,7 +25,7 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.adminPath, require('../routers/admin.routes'));
+        this.app.use(this.adminPath, require('../routers/usuario.routes'));
     }
 
     listen(){
