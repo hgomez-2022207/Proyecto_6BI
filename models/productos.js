@@ -5,6 +5,10 @@ const productoSchema = Schema({
         type: String,
         required:["Nombre del producto"]
     },
+    precio:{
+        type: Number,
+        require:["Precio del producto"]
+    },
     empresa:{
         type:String,
         required:["Marca del produto"]
