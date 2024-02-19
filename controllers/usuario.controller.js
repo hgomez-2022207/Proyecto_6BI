@@ -43,8 +43,22 @@ const getUsuarioBiId = async(req, res = response) =>{
     });
 }
 
+const usuarioPut = async (req, res = response) =>{
+    const{ id } = req.params;
+    const { _id, ...nombre} = req.body;
+
+    await Usuario.findByIdAndUpdate(id, nombre)
+    const usuario = await Usuario.findByIdAndUpdate(id, nombre);
+
+    res.status(200).json({
+        msg: "Los datos del usuario han sido actualizados",
+        usuario
+    });
+}
+
 module.exports = {
     usuarioPost,
     usuarioGet,
-    getUsuarioBiId
+    getUsuarioBiId,
+    usuarioPut
 }

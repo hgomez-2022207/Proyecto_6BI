@@ -2,7 +2,7 @@ const {Router} = require('express');
 const {check} = require('express-validator');
 const router = Router();
 
-const {usuarioPost, usuarioGet, getUsuarioBiId, usuarioDelete, putUsuarios} = require('../controllers/usuario.controller');
+const {usuarioPost, usuarioGet, getUsuarioBiId, usuarioDelete, putUsuarios, usuarioPut} = require('../controllers/usuario.controller');
 
 const {existeEmail, esRoleValido, existeUsuarioById} = require('../helpers/db-validators');
 
@@ -31,5 +31,18 @@ router.get(
 );
 
 router.get('/', usuarioGet);
+
+router.put(
+    "/:id",
+    [
+        check("nombre","El nombre no debe estar vacio").not().isEmpty(),
+        check('correo','La cuenta del usuario').isEmail(),
+        check('password','Importante si deseas acceder a la cuenta').isLength({min:6}),
+        check('correo').custom(existeEmail),
+        check('role').custom(esRoleValido),
+        validarCampos
+        
+    ],usuarioPut
+)
 
 module.exports = router;
