@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const {check} = require('express-validator');
 const { validarCampos} = require('../middlewares/validar-campos');
-const {productoPost, productoGet, productoById, productoPut} = require('../controllers/producto.controller');
+const {productoPost, productoGet, productoById, productoPut, productoDelete} = require('../controllers/producto.controller');
 
 const {existeProductoById} = require('../helpers/db-validators');
 
@@ -44,5 +44,13 @@ router.put(
         
     ], productoPut
 );  
+
+router.delete(
+    "/:id",
+    [
+        check('id','Este producto no esta disponible').isMongoId(),
+        check('id').custom(existeProductoById),
+    ],productoDelete
+);
 
 module.exports = router;

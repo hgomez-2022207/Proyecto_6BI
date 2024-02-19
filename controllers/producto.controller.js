@@ -55,9 +55,22 @@ const productoPut = async (req, res = response) =>{
     });
 }
 
+const productoDelete = async(req,res = response) => {
+    const { id } = req.params;
+    const producto = await Producto.findByIdAndUpdate(id,{estado:false});
+    const productoAutentico = req.producto;
+
+    res.status(200).json({
+        msg: "Informacion del producto invalidada",
+        producto,
+        productoAutentico
+    });
+}
+
 module.exports = {
     productoPost,
     productoGet,
     productoById,
-    productoPut
+    productoPut,
+    productoDelete
 }
