@@ -23,9 +23,17 @@ const existeUsuarioById = async (id = '') =>{
     }
 }
 
+const existeProductoById = async (id = '') =>{
+    const existeProducto = await Producto.findOne({id});
+    if(existeProducto){
+        throw new Error(`El producto no existe`)
+    }
+}
+
 
 module.exports = {
     esRoleValido,
     existeEmail,
     existeUsuarioById,
+    existeProductoById
 }

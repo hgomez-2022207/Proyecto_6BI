@@ -1,7 +1,9 @@
 const {Router} = require('express');
 const {check} = require('express-validator');
-const { validarCampos, esAdminRole, tieneRolAutorizado } = require('../middlewares/validar-campos');
-const {productoPost} = require('../controllers/producto.controller');
+const { validarCampos} = require('../middlewares/validar-campos');
+const {productoPost, productoGet} = require('../controllers/producto.controller');
+
+const {existeProductoById} = require('../helpers/db-validators');
 
 const router = Router();
 
@@ -18,5 +20,16 @@ router.post(
         
     ], productoPost
 );  
+
+router.get(
+    "/:id",
+    [
+        check('id','No es un curso').isMongoId(),
+        check('id').custom(existeProductoById),
+        validarCampos
+    ],getProductoBiId
+);
+
+router.get("/",productoGet);
 
 module.exports = router;
