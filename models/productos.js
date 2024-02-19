@@ -9,6 +9,10 @@ const productoSchema = Schema({
         type: Number,
         require:["Precio del producto"]
     },
+    cantidad:{
+        type:Number,
+        require:["Cantidad de existencias"]
+    },
     empresa:{
         type:String,
         required:["Marca del produto"]
