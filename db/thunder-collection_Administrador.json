@@ -1,0 +1,191 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Administrador",
+    "dateExported": "2024-02-19T03:47:23.762Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b852cf8c-62c0-43a3-a16c-37c97a0c9edb",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "post usuario",
+            "url": "http://localhost:3000/api/usuarios",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-18T23:32:51.989Z",
+            "modified": "2024-02-19T01:06:39.751Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Naomy Escobar\",\n  \"correo\": \"naominickol@gmail.com\",\n  \"password\":\"129123\",\n  \"role\":\"CLIENTE_ROLE\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c00a510c-d946-4571-a61b-1c6526d05b04",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "get usuario",
+            "url": "http://localhost:3000/api/usuarios?desde=0&limite=20",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-19T00:53:40.921Z",
+            "modified": "2024-02-19T01:00:16.686Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "desde",
+                    "value": "0",
+                    "isPath": false
+                },
+                {
+                    "name": "limite",
+                    "value": "20",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "f633cbbe-4cb7-4f1a-a998-51c2535bfa0f",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "get usuarioById",
+            "url": "http://localhost:3000/api/usuarios/65d2aa07eb0318f47fcb856e",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-02-19T01:01:27.130Z",
+            "modified": "2024-02-19T01:08:34.311Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b18d2ebc-0c86-4cf6-8baa-3727d6ad97eb",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "put Usuario",
+            "url": "http://localhost:3000/api/usuarios/65d2aa07eb0318f47fcb856e",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-02-19T01:10:40.353Z",
+            "modified": "2024-02-19T01:21:54.205Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Linda Garma\",\n  \"correo\": \"mayteGarma@gmail.com\",\n  \"password\":\"129123\",\n  \"role\":\"CLIENTE_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2f5c4b6d-01e8-4840-80c1-487ab44736e3",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "delete usuario",
+            "url": "http://localhost:3000/api/usuarios/65d2aa07eb0318f47fcb856e",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-02-19T01:33:59.709Z",
+            "modified": "2024-02-19T01:34:18.787Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c2457e47-6031-4a0f-854c-f35e4d6d52cc",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "post producto",
+            "url": "http://localhost:3000/api/productos",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-02-19T02:11:54.761Z",
+            "modified": "2024-02-19T03:28:56.746Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Jabon\",\n  \"precio\":5,\n  \"cantidad\":30,\n  \"empresa\":\"Foca\",\n  \"descripcion\":\"jabon en polvo para lavar ropa y trastes\",\n  \"categoria\":\"Limpieza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8e2a600e-8aec-4b1e-ac2b-09aebf84eda9",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "get Productos",
+            "url": "http://localhost:3000/api/productos?desde=1&limite=10  ",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-02-19T02:17:28.083Z",
+            "modified": "2024-02-19T03:30:48.650Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "desde",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limite",
+                    "value": "10  ",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "12d175df-f35a-463f-b758-13c96ba962dd",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "get productoById",
+            "url": "http://localhost:3000/api/productos/65d2c061c2a46f7f280f84cd",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-02-19T02:59:17.142Z",
+            "modified": "2024-02-19T03:00:53.855Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1d194eb7-4fe3-4b68-a085-2cf453a6f99b",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "put producto",
+            "url": "http://localhost:3000/api/productos/65d2c061c2a46f7f280f84cd",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2024-02-19T03:03:09.158Z",
+            "modified": "2024-02-19T03:15:36.159Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Laky de Camaron\",\n  \"precio\":1,\n  \"cantidad\":40,\n  \"empresa\":\"Maller\",\n  \"descripcion\":\"Sopas instantaneas para comer en cualquier momento de maller\",\n  \"categoria\":\"Alimentos\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2fc1c9dc-2e2b-4192-b30b-24b9b1d5eb72",
+            "colId": "9f8b0d05-1769-4227-90f8-2ea5aa6fb17d",
+            "containerId": "",
+            "name": "delete producto",
+            "url": "http://localhost:3000/api/productos/65d2c061c2a46f7f280f84cd",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2024-02-19T03:25:12.599Z",
+            "modified": "2024-02-19T03:25:34.239Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
