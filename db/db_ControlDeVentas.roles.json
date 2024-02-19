@@ -1,0 +1,12 @@
+[{
+  "_id": {
+    "$oid": "65d29ef1709e9eb5f1d055ae"
+  },
+  "role": "ADMIN_ROLE"
+},
+{
+  "_id": {
+    "$oid": "65d29f11709e9eb5f1d055b0"
+  },
+  "role": "CLIENTE_ROLE"
+}]

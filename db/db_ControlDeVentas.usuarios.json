@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "65d2a670ef9e1ac3c2ebdbe6"
+  },
+  "nombre": "Mario Castaneda",
+  "correo": "mario3434@gmail.com",
+  "password": "$2a$10$g/seBx0BhFaS0tofZU/EK.5GNwxKKuxR.8KWdGnYv0b06xVTRPiIi",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "google": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65d2aa07eb0318f47fcb856e"
+  },
+  "nombre": "Linda Garma",
+  "correo": "mayteGarma@gmail.com",
+  "password": "129123",
+  "role": "CLIENTE_ROLE",
+  "estado": false,
+  "google": false,
+  "__v": 0
+}]
