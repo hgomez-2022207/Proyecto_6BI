@@ -18,7 +18,7 @@ const existeEmail = async (correo = '') => {
 
 const existeUsuarioById = async (id = '') =>{
     const existeusuario = await Usuario.findOne({id});
-    if(existeUsuario){
+    if(existeusuario){
         throw new Error(`El usuario no existe`)
     }
 }
