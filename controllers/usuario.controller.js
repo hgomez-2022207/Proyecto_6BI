@@ -56,9 +56,22 @@ const usuarioPut = async (req, res = response) =>{
     });
 }
 
+const usuarioDelete = async(req, res = response) => {
+    const { id } =req.params;
+    const usuario = await Usuario.findByIdAndUpdate(id,{estado:false});
+    const usuarioAutenticado = req.usuario;
+
+    res.status(200).json({
+        msg: "Informacion del usuario eliminada",
+        usuario,
+        usuarioAutenticado
+    });
+}
+
 module.exports = {
     usuarioPost,
     usuarioGet,
     getUsuarioBiId,
-    usuarioPut
+    usuarioPut,
+    usuarioDelete
 }
