@@ -24,6 +24,10 @@ const productoSchema = Schema({
     categoria:{
         type:String,
         required:["Categoria del producto"]
+    },
+    estado:{
+        type:Boolean,
+        default:true
     }
 });
 

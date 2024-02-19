@@ -16,6 +16,34 @@ const productoPost = async (req,res) => {
     });
 }
 
+const productoGet = async (req, res = response) => {
+    const {limite, desde} = req.query;
+    const query = {estado: true};
+
+    const [total, producto] = await Promise.all([
+        Producto.countDocuments(query),
+        Producto.find(query)
+        .skip(Number(desde))
+        .limit(Number(limite))
+    ]);
+
+    res.status(200).json({
+        total,
+        producto
+    });
+}
+
+const productoById = async(req, res = response) =>{
+    const { id } = req.params;
+    const producto = await Producto.findOne({_id:id});
+
+    res.status(200).json({
+        producto
+    });
+}
+
 module.exports = {
-    productoPost
+    productoPost,
+    productoGet,
+    productoById
 }
