@@ -2,24 +2,20 @@ const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/usuario');
 const { response, Router } = require('express');
 
-const {usuarioPost, usuarioDelete, putUsuarios} = require('../controllers/usuario.controllers');
+const usuarioPost = async (req,res) => {
+    const {nombre,correo,password,role} = req.body;
+    const usuario = new Usuario({nombre,correo,password,role});
 
-const {existeEmail, esRoleValido, existeUsuarioById} = require('../helpers/db-validators');
+    const salt = bcryptjs.genSaltSync();
+    usuario.password = bcryptjs.hashSync(password,salt);
 
-const router = Router();
+    await usuario.save();
 
-router.post(
-    "/",
-    [
-        check("nombre","El nombre no debe estar vacio").not().isEmpty(),
-        check('email','La cuenta del usuario').isEmail(),
-        check('password','Importante si deseas acceder a la cuenta').isLength({min:6}),
-        check('email').custom(existeEmail),
-        check('role').custom(esRoleValido),
-        validarCampos
-    ], usuarioPost
-);  
+    res.status(200).json({
+        usuario
+    });
+}
 
 module.exports = {
-
+    usuarioPost
 }
