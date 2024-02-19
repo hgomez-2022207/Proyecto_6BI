@@ -42,8 +42,22 @@ const productoById = async(req, res = response) =>{
     });
 }
 
+const productoPut = async (req, res = response) =>{
+    const{ id } = req.params;
+    const { _id, ...nombre} = req.body;
+
+    await Producto.findByIdAndUpdate(id, nombre)
+    const producto = await Producto.findByIdAndUpdate(id, nombre);
+
+    res.status(200).json({
+        msg: "Los datos del producto han sido actualizados",
+        producto
+    });
+}
+
 module.exports = {
     productoPost,
     productoGet,
-    productoById
+    productoById,
+    productoPut
 }
