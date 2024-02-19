@@ -1,8 +1,9 @@
 const bcryptjs = require('bcryptjs');
 const Usuario = require('../models/usuario');
-const { response, Router } = require('express');
+const { response } = require('express');
 
 const usuarioPost = async (req,res) => {
+    console.log('ddd')
     const {nombre,correo,password,role} = req.body;
     const usuario = new Usuario({nombre,correo,password,role});
 

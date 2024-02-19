@@ -12,11 +12,12 @@ router.post(
     "/",
     [
         check("nombre","El nombre no debe estar vacio").not().isEmpty(),
-        check('email','La cuenta del usuario').isEmail(),
+        check('correo','La cuenta del usuario').isEmail(),
         check('password','Importante si deseas acceder a la cuenta').isLength({min:6}),
-        check('email').custom(existeEmail),
+        check('correo').custom(existeEmail),
         check('role').custom(esRoleValido),
         validarCampos
+        
     ], usuarioPost
 );  
 

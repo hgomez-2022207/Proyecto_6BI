@@ -6,10 +6,10 @@ class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.adminPath = '/api/usuario';
-        this.adminPath = '/api/categorias';
-        this.adminPath = '/api/factura';
-        this.adminPath = '/api/productos';
+        this.usuarioPath = '/api/usuarios';
+        this.categoriaPath = '/api/categorias';
+        this.facturaPath = '/api/factura';
+        this.productoPath = '/api/productos';
 
 
         this.conectarDB();
@@ -29,10 +29,10 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.adminPath, require('../routers/usuario.routes.js')),
-        this.app.use(this.adminPath, require('../routers/categoria.routes.js')),
-        this.app.use(this.adminPath, require('../routers/productos.routes.js')),
-        this.app.use(this.adminPath, require('../routers/factura.routes.js'));
+        this.app.use(this.usuarioPath, require('../routers/usuario.routes.js')),
+        this.app.use(this.categoriaPath, require('../routers/categoria.routes.js')),
+        this.app.use(this.productoPath, require('../routers/productos.routes.js')),
+        this.app.use(this.facturaPath, require('../routers/factura.routes.js'));
     }
 
     listen(){
