@@ -4,7 +4,24 @@ import { response }  from 'express';
 
 export const usuarioPost = async (req,res) => {
     console.log('ddd')
-    const {nombre,correo,password,role} = req.body;
+    const {nombre,correo,password} = req.body;
+    const role= 'ADMIN_ROLE'
+    const usuario = new Usuario({nombre,correo,password,role});
+
+    const salt = bcryptjs.genSaltSync();
+    usuario.password = bcryptjs.hashSync(password,salt);
+
+    await usuario.save();
+
+    res.status(200).json({
+        usuario
+    });
+}
+
+export const usuarioClientePost = async (req,res) => {
+    console.log('ddd')
+    const {nombre,correo,password} = req.body;
+    const role= 'CLIENTE_ROLE'
     const usuario = new Usuario({nombre,correo,password,role});
 
     const salt = bcryptjs.genSaltSync();

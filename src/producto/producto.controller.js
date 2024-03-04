@@ -1,8 +1,8 @@
-const bcryptjs = require('bcryptjs');
-const Producto = require('../models/productos');
-const { response } = require('express');
+import bcryptjs from 'bcryptjs';
+import Producto from './productos.model';
+import { response } from 'express';
 
-const productoPost = async (req,res) => {
+export const productoPost = async (req,res) => {
     console.log('productopost')
     const {nombre,precio,cantidad,empresa,descripcion,categoria} = req.body;
     const producto = new Producto({nombre,precio,cantidad,empresa,descripcion,categoria});
@@ -65,12 +65,4 @@ const productoDelete = async(req,res = response) => {
         producto,
         productoAutentico
     });
-}
-
-module.exports = {
-    productoPost,
-    productoGet,
-    productoById,
-    productoPut,
-    productoDelete
 }
