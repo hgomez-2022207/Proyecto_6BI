@@ -1,8 +1,8 @@
-const bcryptjs = require('bcryptjs');
-const Usuario = require('../models/usuario');
-const { response } = require('express');
+import bcryptjs from 'bcryptjs';
+import Usuario from'./usuario.model.js';
+import { response }  from 'express';
 
-const usuarioPost = async (req,res) => {
+export const usuarioPost = async (req,res) => {
     console.log('ddd')
     const {nombre,correo,password,role} = req.body;
     const usuario = new Usuario({nombre,correo,password,role});
@@ -17,7 +17,7 @@ const usuarioPost = async (req,res) => {
     });
 }
 
-const usuarioGet = async (req, res = response) => {
+export const usuarioGet = async (req, res = response) => {
     const {limite, desde} = req.query;
     const query = {estado: true};
 
@@ -34,7 +34,7 @@ const usuarioGet = async (req, res = response) => {
     });
 }
 
-const getUsuarioBiId = async(req, res = response) =>{
+export const getUsuarioBiId = async(req, res = response) =>{
     const { id } = req.params;
     const usuario = await Usuario.findOne({_id:id});
 
@@ -43,7 +43,7 @@ const getUsuarioBiId = async(req, res = response) =>{
     });
 }
 
-const usuarioPut = async (req, res = response) =>{
+export const usuarioPut = async (req, res = response) =>{
     const{ id } = req.params;
     const { _id, ...nombre} = req.body;
 
@@ -56,7 +56,7 @@ const usuarioPut = async (req, res = response) =>{
     });
 }
 
-const usuarioDelete = async(req, res = response) => {
+export const usuarioDelete = async(req, res = response) => {
     const { id } =req.params;
     const usuario = await Usuario.findByIdAndUpdate(id,{estado:false});
     const usuarioAutenticado = req.usuario;
@@ -66,12 +66,4 @@ const usuarioDelete = async(req, res = response) => {
         usuario,
         usuarioAutenticado
     });
-}
-
-module.exports = {
-    usuarioPost,
-    usuarioGet,
-    getUsuarioBiId,
-    usuarioPut,
-    usuarioDelete
 }

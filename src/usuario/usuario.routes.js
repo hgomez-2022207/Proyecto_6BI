@@ -1,12 +1,12 @@
-const {Router} = require('express');
-const {check} = require('express-validator');
+import {Router} from 'express';
+import {check} from 'express-validator';
 const router = Router();
 
-const {usuarioPost, usuarioGet, getUsuarioBiId, usuarioDelete, usuarioPut} = require('./usuario.controller');
+import {usuarioPost, usuarioGet, getUsuarioBiId, usuarioDelete, usuarioPut} from './usuario.controller.js';
 
-const {existeEmail, esRoleValido, existeUsuarioById} = require('../helpers/db-validators');
+import {existeEmail, esRoleValido, existeUsuarioById} from '../helpers/db-validators.js';
 
-const { validarCampos, esAdminRole, tieneRolAutorizado } = require('../middlewares/validar-campos');
+import { validarCampos}  from '../middlewares/validar-campos.js';
 
 router.post(
     "/",
@@ -54,4 +54,4 @@ router.delete(
     ],usuarioDelete
 );
 
-module.exports = router;
+export default router;
