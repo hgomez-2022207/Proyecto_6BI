@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const {dbConection} = require('../db/config');
+const {dbConection} = require('../db/config.js');
 
 class Server{
     constructor(){
@@ -29,10 +29,10 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.usuarioPath, require('../routers/usuario.routes.js')),
-        this.app.use(this.categoriaPath, require('../routers/categoria.routes.js')),
-        this.app.use(this.productoPath, require('../routers/productos.routes.js')),
-        this.app.use(this.facturaPath, require('../routers/factura.routes.js'));
+        this.app.use(this.usuarioPath, require('../src/usuario/usuario.routes.js')),
+        this.app.use(this.categoriaPath, require('../src/categoria/categoria.routes.js')),
+        this.app.use(this.productoPath, require('../src/producto/productos.routes.js')),
+        this.app.use(this.facturaPath, require('../src/factura/factura.routes.js'));
     }
 
     listen(){
