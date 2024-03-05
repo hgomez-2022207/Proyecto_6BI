@@ -1,6 +1,6 @@
-const {Schema, model} = require('mongoose');
+import mongoose from "mongoose";('mongoose');
 
-const categoriaSchema = Schema({
+const categoriaSchema = mongoose.Schema({
     nombreCategoria:{
         type:String,
         required:['Nombre de la categoria']
@@ -14,8 +14,8 @@ const categoriaSchema = Schema({
 
 categoriaSchema.methods.toJSON = function(){
     const{ __v, nombreCategoria, _id, ...categoria} = this.toObject();
-    producto.uid = _id;
+    categoria.uid = _id;
     return categoria;
 };
 
-module.exports = model('Categoria', categoriaSchema);
+export default mongoose.model('Categoria', categoriaSchema);
