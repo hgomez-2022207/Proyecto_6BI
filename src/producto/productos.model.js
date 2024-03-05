@@ -14,7 +14,7 @@ const productoSchema = mongoose.Schema({
         require:["Cantidad de existencias"]
     },
     vendidos:{
-        type:Number,default:0,
+        type:Number,
     },
     empresa:{
         type:String,
