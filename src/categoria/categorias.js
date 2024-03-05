@@ -1,7 +1,7 @@
 import mongoose from "mongoose";('mongoose');
 
 const categoriaSchema = mongoose.Schema({
-    nombreCategoria:{
+    categoria:{
         type:String,
         required:['Nombre de la categoria']
     },
@@ -13,9 +13,9 @@ const categoriaSchema = mongoose.Schema({
 });
 
 categoriaSchema.methods.toJSON = function(){
-    const{ __v, nombreCategoria, _id, ...categoria} = this.toObject();
+    const{ __v, categoria, _id, ...cat} = this.toObject();
     categoria.uid = _id;
-    return categoria;
+    return cat;
 };
 
 export default mongoose.model('Categoria', categoriaSchema);
