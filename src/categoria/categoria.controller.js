@@ -28,12 +28,12 @@ export const categoryPut = async (req,res) => {
         return res.status(400).json({
             msg: "Categoria no existe, vuelva a ingresarla en el query"
         });
-    }/*
+    }
     if(!p){
         return res.status(400).json({
-            msg: "Categoria no existe, vuelva a ingresarla en el query cccccccccccccc"
+            msg: "Categoria no esta registrada en productos"
         });
-    }*/
+    }
 
     cat.categoria=newcategoria;
     cat.edad=edad;
@@ -45,6 +45,9 @@ export const categoryPut = async (req,res) => {
     res.status(200).json({
         msg: "Datos actualizados",
         category,
+        categoria,
+        edad,
+        msg:'despues:',
         categoria,
         edad,
         msg: `Cambio a productos`,
