@@ -1,6 +1,6 @@
-const {Schema, model} = require('mongoose');
+import mongoose from "mongoose";;
 
-const productoSchema = Schema({
+const productoSchema = mongoose.Schema({
     nombre:{
         type: String,
         required:["Nombre del producto"]
@@ -12,6 +12,9 @@ const productoSchema = Schema({
     cantidad:{
         type:Number,
         require:["Cantidad de existencias"]
+    },
+    vendidos:{
+        type:Number,default:0,
     },
     empresa:{
         type:String,
@@ -37,4 +40,4 @@ productoSchema.methods.toJSON = function(){
     return producto;
 };
 
-module.exports = model('Producto', productoSchema);
+export default mongoose.model('Producto', productoSchema);

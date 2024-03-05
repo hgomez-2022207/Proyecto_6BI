@@ -1,9 +1,9 @@
-const {Router} = require('express');
-const {check} = require('express-validator');
-const { validarCampos} = require('../middlewares/validar-campos');
-const {productoPost, productoGet, productoById, productoPut, productoDelete} = require('./producto.controller');
+import {Router} from 'express';
+import {check} from 'express-validator';
+import { validarCampos } from '../middlewares/validar-campos.js';
+import {productoPost, productoGet, productoById, productoPut, productoDelete} from './producto.controller.js';
 
-const {existeProductoById} = require('../helpers/db-validators');
+import {existeProductoById} from '../helpers/db-validators.js';
 
 const router = Router();
 
@@ -53,4 +53,4 @@ router.delete(
     ],productoDelete
 );
 
-module.exports = router;
+export default router;
