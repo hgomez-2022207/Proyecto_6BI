@@ -8,13 +8,17 @@ const categoriaSchema = mongoose.Schema({
     edad:{
         type: String,
         required:['El producto podria usarse por jovenes']
+    },
+    estado:{
+        type: Boolean,
+        default:true
     }
 
 });
 
 categoriaSchema.methods.toJSON = function(){
     const{ __v, categoria, _id, ...cat} = this.toObject();
-    categoria.uid = _id;
+    cat.uid = _id;
     return cat;
 };
 

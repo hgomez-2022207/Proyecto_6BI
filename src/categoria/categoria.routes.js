@@ -9,9 +9,9 @@ const router = Router();
 
 router.post("/",
     [
-        check("nombreCategoria","El nombre de la categoria es obligatorio").not().isEmpty(),
+        check("categoria","El nombre de la categoria es obligatorio").not().isEmpty(),
         check("edad","Es para especificar una edad adecuada par la categoria del producto").not().isEmpty(),
-        check("nombreCategoria").custom(existeCategoria),
+        check("categoria").custom(existeCategoria),
         validarCampos
     ],categoryPost
 );

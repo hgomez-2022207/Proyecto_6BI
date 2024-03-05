@@ -4,13 +4,13 @@ import  response  from  'express';
 
 export const categoryPost = async (req,res) => {
     console.log('categoryPost')
-    const {nombreCategoria,edad} = req.body;
-    const categoria = new Categoria({nombreCategoria,edad});
+    const {categoria,edad} = req.body;
+    const cat = new Categoria({categoria,edad});
 
-    await categoria.save();
+    await cat.save();
 
     res.status(200).json({
-        nombreCategoria,
-        categoria
+        categoria,
+        cat
     });
 }
