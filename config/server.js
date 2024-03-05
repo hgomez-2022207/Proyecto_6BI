@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import {dbConection} from './mongo.js'
 
 import userRoute from '../src/usuario/usuario.routes.js';
+import authRoute from '../src/auth/auth.route.js'
 
 class Server{
     constructor(){
@@ -17,6 +18,7 @@ class Server{
         this.categoriaPath = '/api/categorias';
         this.facturaPath = '/api/factura';
         this.productoPath = '/api/productos';
+        this.authPath = '/api/auth';
 
 
         this.conectarDB();
@@ -38,7 +40,8 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.usuarioPath,userRoute)
+        this.app.use(this.usuarioPath,userRoute),
+        this.app.use(this.authPath,authRoute)
         //this.app.use(this.categoriaPath, require('../src/categoria/categoria.routes.js')),
         //this.app.use(this.productoPath, require('../src/producto/productos.routes.js')),
         //this.app.use(this.facturaPath, require('../src/factura/factura.routes.js'));
