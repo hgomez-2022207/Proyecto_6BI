@@ -54,3 +54,33 @@ export const categoryPut = async (req,res) => {
         pcategory
     });
 }
+
+export const categoryDelete = async (req,res) => {
+    console.log('categoryDelete');
+    const {categoria} = req.query;
+
+    const cat = await Categoria.findOne({categoria})
+    const p = await Producto.findOne({categoria})
+
+    if(!cat){
+        return res.status(400).json({
+            msg: "Categoria no existe, vuelva a ingresarla en el query"
+        });
+    }
+    if(!p){
+        return res.status(400).json({
+            msg: "Categoria no esta registrada en productos"
+        });
+    }
+
+    cat.estado=false;
+    p.categoria='Categorias eliminadas';
+
+    const pcategory = await Producto.findByIdAndUpdate(p.id,p)
+    const category = await Categoria.findByIdAndUpdate(cat.id, cat);
+
+    res.status(200).json({
+        msg: "Categoria eliminada",
+        category,pcategory
+    });
+}

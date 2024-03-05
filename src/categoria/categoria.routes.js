@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import {check} from 'express-validator';
 
-import {categoryPost, categoryPut} from './categoria.controller.js';
+import {categoryDelete, categoryPost, categoryPut} from './categoria.controller.js';
 import { validarCampos } from '../middlewares/validar-campos.js';
 import {existeCategoria} from '../helpers/db-validators.js';
 
@@ -22,6 +22,9 @@ router.put("/",
         check("edad","Es para especificar una edad adecuada par la categoria del producto").not().isEmpty(),
         //check("newcategoria").custom(existeCategoria),
     ],categoryPut
+);
+
+router.delete("/",[],categoryDelete
 );
 
 export default router;
