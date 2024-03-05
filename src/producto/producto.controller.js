@@ -4,29 +4,41 @@ import { response } from 'express';
 import Categoria from '../categoria/categorias.js'
 
 export const productoPost = async (req,res) => {
-    try{
-    console.log('productopost')
-    const {nombre,precio,cantidad,empresa,descripcion,categoria} = req.body;
     
-    const cat = await Categoria.findOne({categoria});
+        console.log('productopost')
+        const {nombre,precio,cantidad,empresa,descripcion,categoria} = req.body;
+        const vendidos = 0;
+    try{  
+        const cat = await Categoria.findOne({categoria});
 
-    if(!cat){
-        return res.status(400).json({
-            msg: 'Por favor poner una categoria existente'
+        console.log(cat)
+        if(!cat){
+            return res.status(400).json({
+                msg: 'Por favor poner una categoria existente',
+                
+            });
+        }
+
+        if(!cat.estado){
+            return res.status(400).json({
+                msg: 'La categoria no existe',
+                
+            });
+        }
+        //producto.cat.push(cat.categoria);
+        const producto = new Producto({nombre,precio,cantidad,vendidos,empresa,descripcion,categoria});
+        //console.log(producto);
+        //
+        
+        await producto.save();
+
+        res.status(200).json({
+            nombre,
+            producto
         });
-    }
-    //producto.cat.push(cat.categoria);
-    const producto = new Producto({nombre,precio,cantidad,empresa,descripcion,categoria});
-    
-    await producto.save();
-
-    res.status(200).json({
-        producto
-    });
     }catch(e){
-        console.log('hi4', e);
         res.status(500).json({
-            msg:  `error when entering comment`
+            msg:  `error aen este producto`
         });
     }
 }
