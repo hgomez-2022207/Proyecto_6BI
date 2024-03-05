@@ -15,10 +15,10 @@ export const existeEmail = async (correo = '') => {
     }
 }
 
-export const existeCategoria = async (nombreCategoria = '') => {
-    const existeCat = await Categoria.findOne({nombreCategoria});
+export const existeCategoria = async (categoria = '') => {
+    const existeCat = await Categoria.findOne({categoria});
     if(existeCat){
-        throw new Error(`El usuario con el ${ nombreCategoria } ya existe`);
+        throw new Error(`El usuario la categoria ${ categoria } ya existe`);
     }
 }
 
