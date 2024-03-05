@@ -30,7 +30,7 @@ export const login = async (req, res) => {
             });
         }
 
-        const token = await generarJWT(user.id);
+        const token = await generarJWT(user.id,user.correo);
 
         res.status(200).json({
             msg: 'Acceso concebido',
