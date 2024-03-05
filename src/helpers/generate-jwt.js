@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken';
 import  token  from 'morgan';
 
-export const generarJWT = (uid = ' ') => {
+export const generarJWT = (uid = ' ',email = ' ') => {
     return new Promise((resolve, reject) => {
-        const playload = ({uid});
+        const playload = ({uid,email});
 
         jwt.sign(
             playload,
