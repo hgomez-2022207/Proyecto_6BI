@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import {check} from 'express-validator';
 import { validarCampos } from '../middlewares/validar-campos.js';
-import {productoPost, productoGet, productoPut, productoDelete, productoByName} from './producto.controller.js';
+import {productoPost, productoGet, productoPut, productoDelete, productoByName, cantidadNull} from './producto.controller.js';
 
 import {existeProductoById, productoExist} from '../helpers/db-validators.js';
 
@@ -49,6 +49,10 @@ router.delete(
         check('id','Este producto no esta disponible').isMongoId(),
         check('id').custom(existeProductoById),
     ],productoDelete
+);
+
+router.get('/cantidad',
+    [],cantidadNull
 );
 
 export default router;

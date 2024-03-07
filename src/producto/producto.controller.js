@@ -99,6 +99,25 @@ export const productoDelete = async(req,res = response) => {
         productoAutentico
     });
 }
+
+export const cantidadNull = async(req, res) => {
+    try{
+        const p = await Producto.findOne({cantidad:0});
+        if(p.length === 0 || !p){
+            return res.status(200).json({
+                msg: 'No existen productos agotados'
+            });
+        }
+
+        return res.status(200).json({
+            p
+        });
+    }catch(error){
+        return res.status(200).json({
+            error: "Error interno"
+        });
+    }
+}
 /*
 export const categoryPut = async (req,res) => {
     console.log('categoryPut');
