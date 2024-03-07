@@ -30,8 +30,13 @@ export const categoryPut = async (req,res) => {
         });
     }
     if(!p){
+        cat.categoria=newcategoria;
+        cat.edad=edad;
+        const category = await Categoria.findByIdAndUpdate(cat.id, cat);
         return res.status(400).json({
-            msg: "Categoria no esta registrada en productos"
+            categoria,
+            edad,
+            msg: "Categoria no esta registrada en productos, por lo que no se ve afectado"
         });
     }
 
@@ -68,8 +73,10 @@ export const categoryDelete = async (req,res) => {
         });
     }
     if(!p){
+        cat.estado=false;
+        const category = await Categoria.findByIdAndUpdate(cat.id, cat);
         return res.status(400).json({
-            msg: "Categoria no esta registrada en productos"
+            msg: "Categoria no esta registrada en productos, por lo que no se ve afectado"
         });
     }
 
