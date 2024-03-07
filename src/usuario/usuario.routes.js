@@ -2,7 +2,7 @@ import {Router} from 'express';
 import {check} from 'express-validator';
 const router = Router();
 
-import {usuarioPost, usuarioClientePost, usuarioGet, getUsuarioBiId, usuarioDelete, usuarioPut} from './usuario.controller.js';
+import {usuarioPost, usuarioClientePost, usuarioGet, getUsuarioBiName, usuarioDelete, usuarioPut} from './usuario.controller.js';
 
 import {existeEmail, existeUsuarioById} from '../helpers/db-validators.js';
 
@@ -33,12 +33,8 @@ router.post(
 );  
 
 router.get(
-    "/:id",
-    [
-        check('id','No es un curso').isMongoId(),
-        check('id').custom(existeUsuarioById),
-        validarCampos
-    ],getUsuarioBiId
+    "/:name",
+    [],getUsuarioBiName
 );
 
 router.get('/', usuarioGet);

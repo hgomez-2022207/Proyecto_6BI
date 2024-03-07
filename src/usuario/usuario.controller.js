@@ -51,12 +51,18 @@ export const usuarioGet = async (req, res = response) => {
     });
 }
 
-export const getUsuarioBiId = async(req, res = response) =>{
-    const { id } = req.params;
-    const usuario = await Usuario.findOne({_id:id});
+export const getUsuarioBiName = async(req, res = response) =>{
+    const { correo } = req.query;
+    const user = await Usuario.findOne({correo})
+
+    if(!user){
+        return res.status(400).json({
+            msg: "El usuario que busca no existe"
+        });
+    }
 
     res.status(200).json({
-        usuario
+        user
     });
 }
 
