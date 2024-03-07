@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import {check} from 'express-validator';
 import { validarCampos } from '../middlewares/validar-campos.js';
-import {productoPost, productoGet, productoById, productoPut, productoDelete} from './producto.controller.js';
+import {productoPost, productoGet, productoPut, productoDelete, productoByName} from './producto.controller.js';
 
 import {existeProductoById, productoExist} from '../helpers/db-validators.js';
 
@@ -23,11 +23,8 @@ router.post(
 );  
 
 router.get(
-    "/:id",
-    [
-        check('id','No es un curso').isMongoId(),
-        check('id').custom(existeProductoById),
-    ],productoById
+    "/",
+    [],productoByName
 );
 
 router.get("/",productoGet);
