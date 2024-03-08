@@ -130,13 +130,28 @@ export const clientePut = async (req, res = response) =>{
 }
 
 export const usuarioDelete = async(req, res = response) => {
-    const { id } =req.params;
-    const usuario = await Usuario.findByIdAndUpdate(id,{estado:false});
-    const usuarioAutenticado = req.usuario;
+    const { correo, password } =req.body;
+    const user = await Usuario.findOne({correo})
+
+    if(!user){
+        console.log(user)
+        return res.status(400).json({
+            msg: 'Usuario no existente'
+        });
+    }
+
+    if(user.password !== password){
+        return res.status(400).json({
+            msg: 'Clave incorrecta'
+        });
+    }
+
+    user.estado=false;
+
+    const usuario = await Usuario.findByIdAndUpdate(user.id,user);
 
     res.status(200).json({
         msg: "Informacion del usuario eliminada",
-        usuario,
-        usuarioAutenticado
+        user
     });
 }

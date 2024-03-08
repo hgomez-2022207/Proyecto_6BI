@@ -74,14 +74,23 @@ router.put(
 
     ],clientePut
 );
-/*
+
 router.delete(
-    "/:id",
+    "/admin",
     [
-        check('id','User no exist').isMongoId(),
-        check('id').custom(existeUsuarioById),
-        validarCampos
+        check('correo','El correo que desea eliminar').isEmail(),
+        check('password','Sirve para comprovar si la cuenta es tuya'),
+
     ],usuarioDelete
-);*/
+);
+
+router.delete(
+    "/",
+    [
+        check('correo','El correo que desea eliminar').isEmail(),
+        check('password','Sirve para comprovar si la cuenta es tuya'),
+
+    ],usuarioDelete
+);
 
 export default router;
