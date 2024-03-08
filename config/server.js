@@ -16,12 +16,12 @@ class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.usuarioPath = '/api/usuarios';
-        this.categoriaPath = '/api/categorias';
-        this.facturaPath = '/api/factura';
-        this.productoPath = '/api/productos';
-        this.authPath = '/api/auth';
-        this.categoryPath = '/api/cat'
+        this.usuarioPath = '/tienda/v1/usuarios';
+        this.categoriaPath = '/tienda/v1/categorias';
+        this.facturaPath = '/tienda/v1/factura';
+        this.productoPath = '/tienda/v1/productos';
+        this.authPath = '/tienda/v1/auth';
+        this.categoryPath = '/tienda/v1/cat'
 
 
         this.conectarDB();

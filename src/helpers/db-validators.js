@@ -1,18 +1,26 @@
 import Usuario from '../usuario/usuario.model.js';
 import Categoria from '../categoria/categorias.js'
 import Producto from '../producto/productos.model.js'
-/*
+
+
 export const esRoleValido = async (role = '') => {
-    const existeRol = await Role.findOne({role});
+    const existeRol = await Usuario.findOne({role});
     if(!existeRol){
-        throw new Error(`El role ${ role } no existe en la base de datos`);
+        throw new Error(`El role ${ role } es invalido, los roles disponibles son: "ADMIN_ROLE", "CLIENTE_ROLE"`);
     }
 }
-*/
+
 export const existeEmail = async (correo = '') => {
     const existeEmail = await Usuario.findOne({correo});
     if(existeEmail){
         throw new Error(`El usuario con el ${ correo } ya existe`);
+    }
+}
+
+export const noExisteEmail = async (correo = '') => {
+    const existeEmail = await Usuario.findOne({correo});
+    if(!existeEmail){
+        throw new Error(`El usuario con el ${ correo } no existe`);
     }
 }
 
