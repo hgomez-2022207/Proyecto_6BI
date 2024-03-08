@@ -45,8 +45,9 @@ router.put(
         check('descripcion','Como le expicaremos a los clientes cual es la funcion del producto').not().isEmpty(),
         check('categoria','Nos da una idea del funcionamiento del producto').not().isEmpty(),
         validarCampos,
+        validarJWT, 
         tieneRolAutorizado('ADMIN_ROLE'),
-        validarJWT,        
+               
     ], productoPut
 );  
 
@@ -55,8 +56,9 @@ router.delete(
     [
         check('id','Este producto no esta disponible').isMongoId(),
         check('id').custom(existeProductoById),
-        tieneRolAutorizado('ADMIN_ROLE'),
         validarJWT,
+        tieneRolAutorizado('ADMIN_ROLE'),
+        
     ],productoDelete
 );
 
@@ -64,7 +66,6 @@ router.get('/cantidad',
     [
         validarJWT,
         tieneRolAutorizado('ADMIN_ROLE'),
-        validarJWT,
     ],cantidadNull
 );
 

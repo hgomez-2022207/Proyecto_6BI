@@ -102,7 +102,7 @@ export const productoDelete = async(req,res = response) => {
 
 export const cantidadNull = async(req, res) => {
     try{
-        const p = await Producto.findOne({cantidad:0});
+        const p = await Producto.find({cantidad:0});
         if(p.length === 0 || !p){
             return res.status(200).json({
                 msg: 'No existen productos agotados'
