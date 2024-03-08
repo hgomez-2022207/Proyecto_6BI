@@ -5,6 +5,10 @@ import {productoPost, productoGet, productoPut, productoDelete, productoByName, 
 
 import {existeProductoById, productoExist} from '../helpers/db-validators.js';
 
+import { validarJWT } from '../middlewares/validar-jwt.js';
+
+import { tieneRolAutorizado } from '../middlewares/validar-roles.js';
+
 const router = Router();
 
 router.post(
@@ -17,17 +21,19 @@ router.post(
         check('descripcion','Como le expicaremos a los clientes cual es la funcion del producto').not().isEmpty(),
         check('categoria','Nos da una idea del funcionamiento del producto').not().isEmpty(),
         check('nombre').custom(productoExist),
-        validarCampos
+        validarCampos,
+        validarJWT,
+        tieneRolAutorizado('ADMIN_ROLE')
         
     ], productoPost
 );  
 
 router.get(
-    "/",
-    [],productoByName
+    "/name",
+    [validarJWT,],productoByName
 );
 
-router.get("/",productoGet);
+router.get("/",[validarJWT,],productoGet);
 
 router.put(
     "/:id",
@@ -38,8 +44,9 @@ router.put(
         check('empresa','Los creadores del producto').not().isEmpty(),
         check('descripcion','Como le expicaremos a los clientes cual es la funcion del producto').not().isEmpty(),
         check('categoria','Nos da una idea del funcionamiento del producto').not().isEmpty(),
-        validarCampos
-        
+        validarCampos,
+        tieneRolAutorizado('ADMIN_ROLE'),
+        validarJWT,        
     ], productoPut
 );  
 
@@ -48,11 +55,17 @@ router.delete(
     [
         check('id','Este producto no esta disponible').isMongoId(),
         check('id').custom(existeProductoById),
+        tieneRolAutorizado('ADMIN_ROLE'),
+        validarJWT,
     ],productoDelete
 );
 
 router.get('/cantidad',
-    [],cantidadNull
+    [
+        validarJWT,
+        tieneRolAutorizado('ADMIN_ROLE'),
+        validarJWT,
+    ],cantidadNull
 );
 
 export default router;

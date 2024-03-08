@@ -8,6 +8,10 @@ import {existeEmail, noExisteEmail, esRoleValido} from '../helpers/db-validators
 
 import { validarCampos}  from '../middlewares/validar-campos.js';
 
+import { validarJWT } from '../middlewares/validar-jwt.js';
+
+import { tieneRolAutorizado } from '../middlewares/validar-roles.js'
+
 router.post(
     "/admin",
     [
@@ -15,7 +19,7 @@ router.post(
         check('correo','La cuenta del usuario').isEmail(),
         check('password','Importante si deseas acceder a la cuenta').isLength({min:6}),
         check('correo').custom(existeEmail),
-        validarCampos
+        validarCampos,
         
     ], usuarioPost
 );  
@@ -27,14 +31,14 @@ router.post(
         check('correo','La cuenta del usuario').isEmail(),
         check('password','Importante si deseas acceder a la cuenta').isLength({min:6}),
         check('correo').custom(existeEmail),
-        validarCampos
+        validarCampos,
         
     ], usuarioClientePost
 );  
 
 router.get(
     "/:name",
-    [],getUsuarioBiName
+    [validarJWT,],getUsuarioBiName
 );
 
 router.get('/', usuarioGet);
@@ -53,7 +57,9 @@ router.put(
         check('correo').custom(noExisteEmail),
         check('newCorreo').custom(existeEmail),
         check('role').custom(esRoleValido),
-        validarCampos
+        validarCampos,
+        validarJWT,
+        tieneRolAutorizado('ADMIN_ROLE')
 
     ],usuarioPut
 );
@@ -70,18 +76,10 @@ router.put(
         check('newPassword','Importante si deseas acceder a la cuenta, por favor poner una mas segura').isLength({min:6}),
         check('correo').custom(noExisteEmail),
         check('newCorreo').custom(existeEmail),
-        validarCampos
+        validarCampos,
+        validarJWT,
 
     ],clientePut
-);
-
-router.delete(
-    "/admin",
-    [
-        check('correo','El correo que desea eliminar').isEmail(),
-        check('password','Sirve para comprovar si la cuenta es tuya'),
-
-    ],usuarioDelete
 );
 
 router.delete(
@@ -89,8 +87,11 @@ router.delete(
     [
         check('correo','El correo que desea eliminar').isEmail(),
         check('password','Sirve para comprovar si la cuenta es tuya'),
+        validarCampos,
+        validarJWT,
 
     ],usuarioDelete
 );
+
 
 export default router;

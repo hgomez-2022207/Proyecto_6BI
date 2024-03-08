@@ -30,6 +30,12 @@ export const login = async (req, res) => {
             });
         }
 
+       /* if(user.password !== password){
+            return res.status(400).json({
+                msg: 'Clave incorrecta'
+            });
+        }*/
+
         const token = await generarJWT(user.id,user.correo);
 
         res.status(200).json({
