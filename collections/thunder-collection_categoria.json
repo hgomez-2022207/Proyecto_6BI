@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoria",
-    "dateExported": "2024-03-05T23:17:54.467Z",
+    "dateExported": "2024-03-08T08:03:54.701Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "a61ca2e2-9658-4b56-b04f-29decaa4be2e",
-            "colId": "ce180e59-9dea-4f45-b5a3-f332e7775607",
+            "_id": "1c859678-9fec-4ba8-bb9c-b0fecd901f1a",
+            "colId": "b502f299-4248-4294-916a-93a1aca8587a",
             "containerId": "",
             "name": "post_category",
-            "url": "http://localhost:8080/api/cat",
+            "url": "http://localhost:8080/tienda/v1/cat",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-05T18:49:55.281Z",
-            "modified": "2024-03-05T22:06:06.055Z",
+            "created": "2024-03-08T07:53:14.151Z",
+            "modified": "2024-03-08T07:53:53.379Z",
             "headers": [],
             "params": [],
             "body": {
@@ -22,18 +22,19 @@
                 "raw": "{\n  \"categoria\":\"qwe\",\n  \"edad\":\"13 - en adelante\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
-            "_id": "76ca5fd2-682e-4ee4-bd15-36fb0852fa03",
-            "colId": "ce180e59-9dea-4f45-b5a3-f332e7775607",
+            "_id": "0d966f97-6ae2-4e9a-b7b7-c8e3625aa7d6",
+            "colId": "b502f299-4248-4294-916a-93a1aca8587a",
             "containerId": "",
             "name": "put_category",
-            "url": "http://localhost:8080/api/cat?categoria=qwe",
+            "url": "http://localhost:8080/tienda/v1/cat?categoria=qwe",
             "method": "PUT",
             "sortNum": 20000,
-            "created": "2024-03-05T20:26:06.066Z",
-            "modified": "2024-03-05T22:06:23.348Z",
+            "created": "2024-03-08T07:53:14.155Z",
+            "modified": "2024-03-08T07:56:00.414Z",
             "headers": [],
             "params": [
                 {
@@ -47,27 +48,28 @@
                 "raw": "{\n  \"newcategoria\":\"abb\",\n  \"edad\":\"1@#$\"\n}",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {
-            "_id": "9da093e4-327a-43dc-ac78-3d83274bf99d",
-            "colId": "ce180e59-9dea-4f45-b5a3-f332e7775607",
+            "_id": "3843ac58-0738-4d19-a05e-69b0f53e5606",
+            "colId": "b502f299-4248-4294-916a-93a1aca8587a",
             "containerId": "",
             "name": "delete_category",
-            "url": "http://localhost:8080/api/cat?categoria=abbb",
+            "url": "http://localhost:8080/tienda/v1/cat?categoria=abb",
             "method": "DELETE",
             "sortNum": 30000,
-            "created": "2024-03-05T23:09:49.365Z",
-            "modified": "2024-03-05T23:15:46.769Z",
+            "created": "2024-03-08T07:53:14.156Z",
+            "modified": "2024-03-08T07:56:23.252Z",
             "headers": [],
             "params": [
                 {
                     "name": "categoria",
-                    "value": "abbb",
+                    "value": "abb",
                     "isPath": false
                 }
             ],
-            "reqType": "put",
+            "reqType": "del",
             "tests": []
         }
     ]

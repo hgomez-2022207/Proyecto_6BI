@@ -1,0 +1,90 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cliente",
+    "dateExported": "2024-03-08T08:03:41.365Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "bb559ac8-cac7-4791-89bf-5922248be5f2",
+            "colId": "41c6debb-1bf5-405c-8964-337e3a675694",
+            "containerId": "",
+            "name": "post usuario_cliente",
+            "url": "http://localhost:8080/tienda/v1/usuarios/cliente",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-08T07:41:41.160Z",
+            "modified": "2024-03-08T07:41:41.160Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Naomy Escobar\",\n  \"correo\": \"aominickol@gmail.com\",\n  \"password\":\"129123\"\n}\n",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "531480a7-df22-49c7-ab59-f0aaf1eea13e",
+            "colId": "41c6debb-1bf5-405c-8964-337e3a675694",
+            "containerId": "",
+            "name": "get usuarioByName",
+            "url": "http://localhost:8080/tienda/v1/usuarios/name?correo=naminickol@gmail.com",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-08T07:41:46.824Z",
+            "modified": "2024-03-08T07:41:46.824Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "correo",
+                    "value": "naminickol@gmail.com",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "0eae9230-31ff-48bc-b6a5-c224eb19cbaf",
+            "colId": "41c6debb-1bf5-405c-8964-337e3a675694",
+            "containerId": "",
+            "name": "delete admin Copy",
+            "url": "http://localhost:8080/tienda/v1/usuarios/admin",
+            "method": "DELETE",
+            "sortNum": 25000,
+            "created": "2024-03-08T07:57:48.882Z",
+            "modified": "2024-03-08T07:57:48.882Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\":\"marcow@tulio.com\",\n  \"password\":\"129123ss\"\n}",
+                "form": []
+            },
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "3f275c4d-183c-4060-8de7-d29a049c0127",
+            "colId": "41c6debb-1bf5-405c-8964-337e3a675694",
+            "containerId": "",
+            "name": "put Cliente",
+            "url": "http://localhost:8080/tienda/v1/usuarios/cliente",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-08T07:57:39.035Z",
+            "modified": "2024-03-08T07:57:39.036Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\":\"maria@gmail.com\",\n  \"password\":\"qqqqqqqqqq\",\n  \n  \"nombre\": \"Mario Garma\",\n  \"newCorreo\": \"mar@gmail.com\",\n  \"newPassword\":\"qqqq11111qqqqqq\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        }
+    ]
+}
