@@ -67,15 +67,69 @@ export const getUsuarioBiName = async(req, res = response) =>{
 }
 
 export const usuarioPut = async (req, res = response) =>{
-    const{ id } = req.params;
-    const { _id, ...nombre} = req.body;
+    const {correo, password, nombre, newCorreo, newPassword, role} = req.body;
 
-    await Usuario.findByIdAndUpdate(id, nombre)
+    const user = await Usuario.findOne({correo});
+
+    if(!user){
+        console.log(user)
+        return res.status(400).json({
+            msg: 'Usuario no existente'
+        });
+    }
+
+    const validPassword = bcryptjs.compareSync(password, user.password);
+
+    if(!validPassword){
+        return res.status(400).json({
+            validPassword,
+            msg: 'Clave incorrecta'
+        });
+    }
+
+    user.correo = newCorreo;
+    user.password = newPassword;
+    user.nombre = nombre;
+    user.role = role
+
+    
+    const usuario = await Usuario.findByIdAndUpdate(user.id, user);
+
+    res.status(200).json({
+        msg: "Los datos del usuario han sido actualizados",
+        user,
+        password,
+        validPassword,
+    });
+}
+
+export const clientePut = async (req, res = response) =>{
+    const { correo,password,nombre, newCorreo ,newPassword} = req.body;
+
+    const user = await Usuario.findOne({correo})
+    const role = 'CLIENTE_ROLE'
+
+    if(!user){
+        return res.status(400).json({
+            msg: "No existe este cliente"
+        });
+    }else if(user.password === password){
+        return res.status(400).json({
+            msg: "Password incompleto"
+        });
+    }
+
+    user.nombre = nombre;
+    user.correo = newCorreo;
+    user.password = newPassword;
+
+    //await Usuario.findByIdAndUpdate(id, nombre)
     const usuario = await Usuario.findByIdAndUpdate(id, nombre);
 
     res.status(200).json({
         msg: "Los datos del usuario han sido actualizados",
-        usuario
+        usuario,
+        nombre,newCorreo,newPassword
     });
 }
 

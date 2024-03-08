@@ -34,7 +34,7 @@ export const categoryPut = async (req,res) => {
         cat.edad=edad;
         const category = await Categoria.findByIdAndUpdate(cat.id, cat);
         return res.status(400).json({
-            categoria,
+            newcategoria,
             edad,
             msg: "Categoria no esta registrada en productos, por lo que no se ve afectado"
         });
@@ -76,6 +76,8 @@ export const categoryDelete = async (req,res) => {
         cat.estado=false;
         const category = await Categoria.findByIdAndUpdate(cat.id, cat);
         return res.status(400).json({
+            categoria,
+            cat,
             msg: "Categoria no esta registrada en productos, por lo que no se ve afectado"
         });
     }
