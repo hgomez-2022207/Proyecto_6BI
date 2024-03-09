@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "login",
+    "dateExported": "2024-03-09T02:23:57.477Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9248ba56-c5d3-471a-a7f1-a910d3e4c687",
+            "colId": "5a64b162-2a32-4344-9da8-d68921b6f8d3",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:8080/tienda/v1/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-09T01:26:14.972Z",
+            "modified": "2024-03-09T01:40:26.277Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\":\"mao@gmail.com\",\n  \"password\":\"129123\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

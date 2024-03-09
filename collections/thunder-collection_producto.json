@@ -1,0 +1,109 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "producto",
+    "dateExported": "2024-03-09T02:23:46.455Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "02bab053-4f85-4249-a6fe-8e3d8126bba3",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "post_Producto",
+            "url": "http://localhost:8080/tienda/v1/productos",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-09T01:22:41.533Z",
+            "modified": "2024-03-09T01:42:22.110Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"escoba\",\n  \"precio\":12.92,\n  \"cantidad\":12,\n  \"empresa\":\"Sully\",\n  \"descripcion\":\"Sirve para barrer\",\n  \"categoria\":\"limpieza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "db388cbc-b675-4784-939f-abaf1e6004da",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "get_producto",
+            "url": "http://localhost:8080/tienda/v1/productos",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-09T01:42:44.391Z",
+            "modified": "2024-03-09T01:44:02.543Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0e479880-1ffc-43f2-a46c-ce7c14c5398d",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "delete_producto",
+            "url": "",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-09T01:44:29.333Z",
+            "modified": "2024-03-09T01:44:29.333Z",
+            "headers": []
+        },
+        {
+            "_id": "408634f7-48a1-4ece-b434-25114a27ee96",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "get_productoByNull",
+            "url": "http://localhost:8080/tienda/v1/productos/cantidad",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-09T01:46:00.944Z",
+            "modified": "2024-03-09T01:46:57.694Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "990c6222-4674-4ac4-a955-d069e6c95f74",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "get_productoByCat",
+            "url": "http://localhost:8080/tienda/v1/productos/categoria?categoria=qwe",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-03-09T01:47:50.019Z",
+            "modified": "2024-03-09T01:52:24.992Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                }
+            ],
+            "params": [
+                {
+                    "name": "categoria",
+                    "value": "qwe",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}
