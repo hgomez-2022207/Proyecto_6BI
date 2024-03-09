@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import {check} from 'express-validator';
 import { validarCampos } from '../middlewares/validar-campos.js';
-import {productoPost, productoGet, productoPut, productoDelete, productoByName, cantidadNull} from './producto.controller.js';
+import {productoPost, productoGet, productoPut, productoDelete, productoByName, cantidadNull, productoByCat} from './producto.controller.js';
 
 import {existeProductoById, productoExist} from '../helpers/db-validators.js';
 
@@ -67,6 +67,13 @@ router.get('/cantidad',
         validarJWT,
         tieneRolAutorizado('ADMIN_ROLE'),
     ],cantidadNull
+);
+
+router.get('/categoria',
+    [
+        validarJWT,
+        tieneRolAutorizado('ADMIN_ROLE'),
+    ],productoByCat
 );
 
 export default router;

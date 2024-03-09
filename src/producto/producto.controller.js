@@ -38,7 +38,7 @@ export const productoPost = async (req,res) => {
         });
     }catch(e){
         res.status(500).json({
-            msg:  `error aen este producto`
+            msg:  `error en este producto`
         });
     }
 }
@@ -67,6 +67,22 @@ export const productoByName = async(req, res = response) =>{
     if(!p){
         return res.status(400).json({
             msg: "El producto que busca no esta disponible"
+        });
+    }
+
+    res.status(200).json({
+        p
+    });
+}
+
+export const productoByCat = async(req, res = response) =>{
+    const { categoria } = req.query;
+    const c = await Categoria.findOne({categoria})
+    const p = await Producto.find({categoria})
+
+    if(!c){
+        return res.status(400).json({
+            msg: "Esta categoria no existe"
         });
     }
 
