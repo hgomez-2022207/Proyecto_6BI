@@ -16,6 +16,23 @@ export const categoryPost = async (req,res) => {
     });
 }
 
+export const getCategoria = async (req,res) => {
+    const {limite, desde} = req.query;
+    const query = {estado: true};
+
+    const [total, categoria] = await Promise.all([
+        Categoria.countDocuments(query),
+        Categoria.find(query)
+        .skip(Number(desde))
+        .limit(Number(limite))
+    ]);
+
+    res.status(200).json({
+        total,
+        categoria
+    });
+}
+
 export const categoryPut = async (req,res) => {
     console.log('categoryPut');
     const {categoria} = req.query;
