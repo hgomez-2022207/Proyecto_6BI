@@ -23,10 +23,8 @@ class Server{
         this.facturaPath = '/apiProyecto/v1/factura';
         this.productoPath = '/apiProyecto/v1/productos';
         this.authPath = '/apiProyecto/v1/auth';
-<<<<<<< HEAD
-=======
         this.compraPath = '/apiProyecto/v1/compra';
->>>>>>> 78ad9a07328821fa60fe03824aeaa143c1ccd491
+
 
 
         this.conectarDB();
@@ -51,13 +49,11 @@ class Server{
         this.app.use(this.usuarioPath,userRoute),
         this.app.use(this.authPath,authRoute),
         this.app.use(this.categoriaPath,categoryRoute),
-<<<<<<< HEAD
         this.app.use(this.productoPath,productoRoute)
-=======
         this.app.use(this.productoPath,productoRoute),
         this.app.use(this.facturaPath,facturaRoute),
         this.app.use(this.compraPath,compraRoute)
->>>>>>> 78ad9a07328821fa60fe03824aeaa143c1ccd491
+
     }
 
     listen(){
