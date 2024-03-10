@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "producto",
-    "dateExported": "2024-03-09T02:23:46.455Z",
+    "dateExported": "2024-03-10T03:37:28.089Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,11 +10,11 @@
             "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
             "containerId": "",
             "name": "post_Producto",
-            "url": "http://localhost:8080/tienda/v1/productos",
+            "url": "http://localhost:8080/apiProyecto/v1/productos",
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-09T01:22:41.533Z",
-            "modified": "2024-03-09T01:42:22.110Z",
+            "modified": "2024-03-10T03:37:21.619Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -27,6 +27,7 @@
                 "raw": "{\n  \"nombre\":\"escoba\",\n  \"precio\":12.92,\n  \"cantidad\":12,\n  \"empresa\":\"Sully\",\n  \"descripcion\":\"Sirve para barrer\",\n  \"categoria\":\"limpieza\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
@@ -34,11 +35,11 @@
             "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
             "containerId": "",
             "name": "get_producto",
-            "url": "http://localhost:8080/tienda/v1/productos",
+            "url": "http://localhost:8080/apiProyecto/v1/productos",
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-09T01:42:44.391Z",
-            "modified": "2024-03-09T01:44:02.543Z",
+            "modified": "2024-03-10T03:37:17.255Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -46,30 +47,19 @@
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
-        },
-        {
-            "_id": "0e479880-1ffc-43f2-a46c-ce7c14c5398d",
-            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
-            "containerId": "",
-            "name": "delete_producto",
-            "url": "",
-            "method": "GET",
-            "sortNum": 30000,
-            "created": "2024-03-09T01:44:29.333Z",
-            "modified": "2024-03-09T01:44:29.333Z",
-            "headers": []
         },
         {
             "_id": "408634f7-48a1-4ece-b434-25114a27ee96",
             "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
             "containerId": "",
             "name": "get_productoByNull",
-            "url": "http://localhost:8080/tienda/v1/productos/cantidad",
+            "url": "http://localhost:8080/apiProyecto/v1/productos/cantidad",
             "method": "GET",
             "sortNum": 50000,
             "created": "2024-03-09T01:46:00.944Z",
-            "modified": "2024-03-09T01:46:57.694Z",
+            "modified": "2024-03-10T03:36:59.398Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -77,6 +67,7 @@
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
@@ -84,25 +75,101 @@
             "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
             "containerId": "",
             "name": "get_productoByCat",
-            "url": "http://localhost:8080/tienda/v1/productos/categoria?categoria=qwe",
+            "url": "http://localhost:8080/apiProyecto/v1/productos/categoria?categoria=limpieza",
             "method": "GET",
             "sortNum": 60000,
             "created": "2024-03-09T01:47:50.019Z",
-            "modified": "2024-03-09T01:52:24.992Z",
+            "modified": "2024-03-10T03:36:55.045Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NTQ4OTMsImV4cCI6MTcwOTk2NTY5M30.1uunMfS-_Rie-rH5CnvJau4PNMnc3X-6qXn-CFoIcBo"
                 }
             ],
             "params": [
                 {
                     "name": "categoria",
-                    "value": "qwe",
+                    "value": "limpieza",
                     "isPath": false
                 }
             ],
             "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "3614cf83-892d-45b7-be00-7a8608393950",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "get_masVendidos",
+            "url": "http://localhost:8080/apiProyecto/v1/productos/vendidos",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-09T08:06:05.453Z",
+            "modified": "2024-03-10T03:36:50.365Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NzE4MDksImV4cCI6MTcwOTk4MjYwOX0.kkfXvzDLnaJqPmiG5va4MgAtq9ozXdRuphMxa7esXyI"
+                }
+            ],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "28e81279-3628-40bd-ad0e-ef9f8e5a9e38",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "delete_producto",
+            "url": "http://localhost:8080/apiProyecto/v1/productos?nombre=Salchichas",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-03-10T03:06:23.415Z",
+            "modified": "2024-03-10T03:11:15.650Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwNDAwMzYsImV4cCI6MTcxMDA1MDgzNn0.fuakxAK5IYC-Kl1uR26btWHLd-uX3H7K4QxhR5DsTDg"
+                }
+            ],
+            "params": [
+                {
+                    "name": "nombre",
+                    "value": "Salchichas",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "aa277634-bc16-4dcc-8ff9-c2065d996fe3",
+            "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
+            "containerId": "",
+            "name": "put_producto",
+            "url": "http://localhost:8080/apiProyecto/v1/productos?nombre=escoba",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-03-10T03:25:55.234Z",
+            "modified": "2024-03-10T03:32:58.169Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwNDAwMzYsImV4cCI6MTcxMDA1MDgzNn0.fuakxAK5IYC-Kl1uR26btWHLd-uX3H7K4QxhR5DsTDg"
+                }
+            ],
+            "params": [
+                {
+                    "name": "nombre",
+                    "value": "escoba",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"newNombre\":\"escobaiis\",\n  \"precio\":20,\n  \"cantidad\":123,\n  \"empresa\":\"Teresa\",\n  \"descripcion\":\"Sirve para barrer el piso\",\n  \"categoria\":\"limpieza2\"\n}\n",
+                "form": []
+            },
             "tests": []
         }
     ]
