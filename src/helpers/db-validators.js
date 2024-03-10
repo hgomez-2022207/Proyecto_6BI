@@ -11,7 +11,7 @@ export const esRoleValido = async (role = '') => {
 }
 
 export const existeEmail = async (correo = '') => {
-    const existeEmail = await Usuario.findOne({correo});
+    const existeEmail = await Usuario.findOne({correo, estado:true});
     if(existeEmail){
         throw new Error(`El usuario con el ${ correo } ya existe`);
     }
