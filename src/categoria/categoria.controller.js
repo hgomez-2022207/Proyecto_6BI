@@ -33,7 +33,7 @@ export const getCategoria = async (req,res) => {
     });
 }
 
-export const categoryPut = async (req,res) => {
+/*export const categoryPut = async (req,res) => {
     console.log('categoryPut');
     const {categoria} = req.query;
     const {newcategoria,edad} = req.body;
@@ -75,38 +75,88 @@ export const categoryPut = async (req,res) => {
         msg: `Cambio a productos`,
         pcategory
     });
-}
+}*/
 
-export const categoryDelete = async (req,res) => {
+export const categoryPut = async (req, res) => {
+    console.log('categoryPut');
+    const { categoria } = req.query;
+    const { newcategoria, edad } = req.body;
+
+    try {
+        const cat = await Categoria.findOne({ categoria });
+
+        if (!cat) {
+            return res.status(400).json({
+                msg: "La categoría no existe, por favor verifique el parámetro de consulta"
+            });
+        }
+
+        const productosToUpdate = await Producto.find({ categoria });
+
+        if (productosToUpdate.length === 0) {
+            cat.categoria = newcategoria;
+            cat.edad = edad;
+            const categoriaActualizada = await Categoria.findByIdAndUpdate(cat.id, cat);
+            
+            return res.status(200).json({
+                msg: "Datos actualizados",
+                categoria: categoriaActualizada,
+                productos: [],
+                msgProductos: "No hay productos asociados a esta categoría"
+            });
+        }
+
+        const updatedProducts = await Producto.updateMany(
+            { categoria },
+            { categoria: newcategoria }
+        );
+
+        cat.categoria = newcategoria;
+        cat.edad = edad;
+        const categoriaActualizada = await Categoria.findByIdAndUpdate(cat.id, cat);
+
+        res.status(200).json({
+            msg: "Datos actualizados",
+            categoria: categoriaActualizada,
+            productos: updatedProducts
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error interno del servidor" });
+    }
+};
+
+
+
+export const categoryDelete = async (req, res) => {
     console.log('categoryDelete');
-    const {categoria} = req.query;
+    const { categoria } = req.query;
 
-    const cat = await Categoria.findOne({categoria})
-    const p = await Producto.findOne({categoria})
+    try {
+        const cat = await Categoria.findOne({ categoria });
 
-    if(!cat){
-        return res.status(400).json({
-            msg: "Categoria no existe, vuelva a ingresarla en el query"
+        if (!cat) {
+            return res.status(404).json({
+                msg: "Categoria no existe, por favor verifique que el nombre sea el correcto "
+            });
+        }
+
+        const updatedCat = await Categoria.findByIdAndUpdate(cat.id, { estado: false });
+        const productList = await Producto.find({ categoria: 'Categorias eliminadas' });
+
+        const updatedProducts = await Producto.updateMany(
+            { categoria: cat.categoria },
+            { categoria: 'Categorias eliminadas' }
+        );
+
+        res.status(200).json({
+            msg: "Eliminada",
+            category: updatedCat,
+            products: productList
         });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error interno del servidor" });
     }
-    if(!p){
-        cat.estado=false;
-        const category = await Categoria.findByIdAndUpdate(cat.id, cat);
-        return res.status(400).json({
-            categoria,
-            cat,
-            msg: "Categoria no esta registrada en productos, por lo que no se ve afectado"
-        });
-    }
+};
 
-    cat.estado=false;
-    p.categoria='Categorias eliminadas';
-
-    const pcategory = await Producto.findByIdAndUpdate(p.id,p)
-    const category = await Categoria.findByIdAndUpdate(cat.id, cat);
-
-    res.status(200).json({
-        msg: "Categoria eliminada",
-        category,pcategory
-    });
-}
