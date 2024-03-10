@@ -17,7 +17,7 @@ const categoriaSchema = mongoose.Schema({
 });
 
 categoriaSchema.methods.toJSON = function(){
-    const{ __v, categoria, _id, ...cat} = this.toObject();
+    const{ __v, _id, ...cat} = this.toObject();
     cat.uid = _id;
     return cat;
 };

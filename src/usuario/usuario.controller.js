@@ -78,14 +78,20 @@ export const usuarioPut = async (req, res = response) =>{
         });
     }
 
-    if(user.password !== password){
+    const salt = bcryptjs.genSaltSync();
+
+    const validPassword = bcryptjs.compareSync(password, user.password);
+    
+
+    if(!validPassword){
         return res.status(400).json({
             msg: 'Clave incorrecta'
         });
     }
 
+    user.password = bcryptjs.hashSync(newPassword,salt);
+
     user.correo = newCorreo;
-    user.password = newPassword;
     user.nombre = nombre;
     user.role = role
 
@@ -111,7 +117,10 @@ export const clientePut = async (req, res = response) =>{
         });
     }
 
-    if(user.password !== password){
+    const validPassword = bcryptjs.compareSync(password, user.password);
+    
+
+    if(!validPassword){
         return res.status(400).json({
             msg: 'Clave incorrecta'
         });
@@ -140,7 +149,10 @@ export const usuarioDelete = async(req, res = response) => {
         });
     }
 
-    if(user.password !== password){
+    const validPassword = bcryptjs.compareSync(password, user.password);
+    
+
+    if(!validPassword){
         return res.status(400).json({
             msg: 'Clave incorrecta'
         });
