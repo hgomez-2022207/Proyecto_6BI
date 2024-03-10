@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "keywords": ["ESModule"],
+  "keywords": [
+    "ESModule"
+  ],
   "author": "Herlin Fernando Gomez Escobar",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +21,8 @@
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.3",
-    "morgan": "^1.10.0"
-  }, "type": "module"
+    "morgan": "^1.10.0",
+    "pdfkit": "^0.14.0"
+  },
+  "type": "module"
 }
