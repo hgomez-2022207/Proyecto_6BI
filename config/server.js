@@ -19,11 +19,10 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
         this.usuarioPath = '/apiProyecto/v1/usuarios';
-        this.categoriaPath = '/apiProyecto/v1/categorias';
+        this.categoriaPath = '/apiProyecto/v1/categoria';
         this.facturaPath = '/apiProyecto/v1/factura';
         this.productoPath = '/apiProyecto/v1/productos';
         this.authPath = '/apiProyecto/v1/auth';
-        this.categoryPath = '/apiProyecto/v1/cat';
         this.compraPath = '/apiProyecto/v1/compra';
 
 
@@ -48,7 +47,7 @@ class Server{
     routes(){
         this.app.use(this.usuarioPath,userRoute),
         this.app.use(this.authPath,authRoute),
-        this.app.use(this.categoryPath,categoryRoute),
+        this.app.use(this.categoriaPath,categoryRoute),
         this.app.use(this.productoPath,productoRoute),
         this.app.use(this.facturaPath,facturaRoute),
         this.app.use(this.compraPath,compraRoute)
