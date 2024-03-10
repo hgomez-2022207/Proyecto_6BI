@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Administrador",
-    "dateExported": "2024-03-10T03:40:24.065Z",
+    "dateExported": "2024-03-10T21:44:35.637Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-07T07:58:50.243Z",
-            "modified": "2024-03-10T03:39:44.090Z",
+            "modified": "2024-03-10T20:47:03.154Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Naomy Escobar\",\n  \"correo\": \"mao@gmail.com\",\n  \"password\":\"129123\"\n}\n",
+                "raw": "{\n  \"nombre\": \"Maury Escobar\",\n  \"correo\": \"marco@kinal.com\",\n  \"password\":\"129123\"\n}\n",
                 "form": []
             },
             "reqType": "post",
@@ -34,8 +34,13 @@
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-03-07T07:58:50.245Z",
-            "modified": "2024-03-10T03:39:47.737Z",
-            "headers": [],
+            "modified": "2024-03-10T18:46:59.644Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmVhMDI5N2FiM2U1NmU3ZjFmMTMiLCJlbWFpbCI6Im1hb3JpY2lvQGdtYWlsLmNvbSIsImlhdCI6MTcxMDA5NjI0MCwiZXhwIjoxNzEwMTA3MDQwfQ.3WjqgtOiPv-AiY4zN5BhHYKeyD57UyNwbbsdqU-lPso"
+                }
+            ],
             "params": [
                 {
                     "name": "desde",
@@ -56,16 +61,21 @@
             "colId": "837decce-eea2-4d99-ad60-291951033494",
             "containerId": "",
             "name": "get usuarioByName",
-            "url": "http://localhost:8080/apiProyecto/v1/usuarios/name?correo=naminickol@gmail.com",
+            "url": "http://localhost:8080/apiProyecto/v1/usuarios/name?correo=maoricio@gmail.com",
             "method": "GET",
             "sortNum": 45000,
             "created": "2024-03-08T07:42:28.100Z",
-            "modified": "2024-03-10T03:39:52.826Z",
-            "headers": [],
+            "modified": "2024-03-10T18:45:47.447Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmVhMDI5N2FiM2U1NmU3ZjFmMTMiLCJlbWFpbCI6Im1hb3JpY2lvQGdtYWlsLmNvbSIsImlhdCI6MTcxMDA5NjI0MCwiZXhwIjoxNzEwMTA3MDQwfQ.3WjqgtOiPv-AiY4zN5BhHYKeyD57UyNwbbsdqU-lPso"
+                }
+            ],
             "params": [
                 {
                     "name": "correo",
-                    "value": "naminickol@gmail.com",
+                    "value": "maoricio@gmail.com",
                     "isPath": false
                 }
             ],
@@ -81,12 +91,17 @@
             "method": "PUT",
             "sortNum": 60000,
             "created": "2024-03-07T07:58:50.247Z",
-            "modified": "2024-03-10T03:39:56.289Z",
-            "headers": [],
+            "modified": "2024-03-10T20:58:56.677Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"correo\":\"marcow@tulio.com\",\n  \"password\":\"129123ss\",\n  \n  \"nombre\": \"Mario Garma\",\n  \"newCorreo\": \"marow@tulio.com\",\n  \"newPassword\":\"129123ss\",\n  \"role\":\"CLIENTE_ROLE\"\n}",
+                "raw": "{\n  \"correo\":\"aominickol@gmail.com\",\n  \"password\":\"129123\",\n  \n  \"nombre\": \"Mario Garma\",\n  \"newCorreo\": \"marcos@kinal.com\",\n  \"newPassword\":\"129123ssaaa\",\n  \"role\":\"ADMIN_ROLE\"\n}",
                 "form": []
             },
             "reqType": "put",
@@ -101,12 +116,17 @@
             "method": "DELETE",
             "sortNum": 70000,
             "created": "2024-03-07T07:58:50.248Z",
-            "modified": "2024-03-10T03:40:00.022Z",
-            "headers": [],
+            "modified": "2024-03-10T20:59:57.216Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"correo\":\"marcow@tulio.com\",\n  \"password\":\"129123ss\"\n}",
+                "raw": "{\n  \"correo\":\"marcos@kinal.com\",\n  \"password\":\"129123ssaaa\"\n}",
                 "form": []
             },
             "reqType": "del",

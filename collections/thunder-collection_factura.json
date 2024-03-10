@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "factura",
-    "dateExported": "2024-03-10T09:52:05.398Z",
+    "dateExported": "2024-03-10T21:45:23.741Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,19 +14,20 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-10T04:40:37.857Z",
-            "modified": "2024-03-10T06:09:06.241Z",
+            "modified": "2024-03-10T21:16:08.611Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwNTA5MjcsImV4cCI6MTcxMDA2MTcyN30.zsPQduub190_heck3-gBBNuuwg2yvx9BMOmP8TwvPS4"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hcmNvQHR1bGlvYS5jb20iLCJpYXQiOjE3MTAxMDUzNTYsImV4cCI6MTcxMDExNjE1Nn0.-HApO338Hq_DpHQ69U8cEIbaFCKSu8-Vo7mp3KXVdpw"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"fecha\":\"2023-09-18\",\n  \"correo\":\"maytema@gmail.com\",\n  \"metodoP\":\"efectivo\"\n}",
+                "raw": "{\n  \"fecha\":\"2023-09-18\",\n  \"correo\":\"marco@tulioa.com\",\n  \"metodoP\":\"efectivo\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
@@ -34,24 +35,25 @@
             "colId": "e1e5afe2-ea44-478c-aa58-87aecfb7f296",
             "containerId": "",
             "name": "getFacturaByEmail",
-            "url": "http://localhost:8080/apiProyecto/v1/factura?correo=maytema@gmail.com",
+            "url": "http://localhost:8080/apiProyecto/v1/factura?correo=marco@tulioa.com",
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-10T06:02:20.084Z",
-            "modified": "2024-03-10T06:27:03.963Z",
+            "modified": "2024-03-10T21:17:19.526Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwNTA5MjcsImV4cCI6MTcxMDA2MTcyN30.zsPQduub190_heck3-gBBNuuwg2yvx9BMOmP8TwvPS4"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hcmNvQHR1bGlvYS5jb20iLCJpYXQiOjE3MTAxMDUzNTYsImV4cCI6MTcxMDExNjE1Nn0.-HApO338Hq_DpHQ69U8cEIbaFCKSu8-Vo7mp3KXVdpw"
                 }
             ],
             "params": [
                 {
                     "name": "correo",
-                    "value": "maytema@gmail.com",
+                    "value": "marco@tulioa.com",
                     "isPath": false
                 }
             ],
+            "reqType": "get",
             "tests": []
         }
     ]

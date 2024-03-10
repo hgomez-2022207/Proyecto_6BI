@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "compra",
-    "dateExported": "2024-03-10T09:52:12.256Z",
+    "dateExported": "2024-03-10T21:45:30.466Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,30 +10,30 @@
             "colId": "0dc81ac7-8315-41ca-860b-9796f61f9ddc",
             "containerId": "",
             "name": "put_compra",
-            "url": "http://localhost:8080/apiProyecto/v1/compra?correo=maytema@gmail.com",
+            "url": "http://localhost:8080/apiProyecto/v1/compra?correo=marco@tulioa.com",
             "method": "PUT",
             "sortNum": 10000,
             "created": "2024-03-10T07:03:39.638Z",
-            "modified": "2024-03-10T08:00:43.529Z",
+            "modified": "2024-03-10T21:23:13.485Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwNTA5MjcsImV4cCI6MTcxMDA2MTcyN30.zsPQduub190_heck3-gBBNuuwg2yvx9BMOmP8TwvPS4"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hcmNvQHR1bGlvYS5jb20iLCJpYXQiOjE3MTAxMDUzNTYsImV4cCI6MTcxMDExNjE1Nn0.-HApO338Hq_DpHQ69U8cEIbaFCKSu8-Vo7mp3KXVdpw"
                 }
             ],
             "params": [
                 {
                     "name": "correo",
-                    "value": "maytema@gmail.com",
+                    "value": "marco@tulioa.com",
                     "isPath": false
                 }
             ],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Pan sandwich\",\n  \"cantidad\":12\n}",
+                "raw": "{\n  \"nombre\":\"TV 80 pulgadas\",\n  \"cantidad\":1\n}",
                 "form": []
             },
-            "reqType": "get",
+            "reqType": "put",
             "tests": []
         },
         {
@@ -45,12 +45,17 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-10T08:53:20.822Z",
-            "modified": "2024-03-10T09:02:35.982Z",
-            "headers": [],
+            "modified": "2024-03-10T21:21:02.433Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hcmNvQHR1bGlvYS5jb20iLCJpYXQiOjE3MTAxMDUzNTYsImV4cCI6MTcxMDExNjE1Nn0.-HApO338Hq_DpHQ69U8cEIbaFCKSu8-Vo7mp3KXVdpw"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"correo\":\"maytema@gmail.com\"\n}",
+                "raw": "{\n  \"correo\":\"marco@tulioa.com\"\n}",
                 "form": []
             },
             "reqType": "get",

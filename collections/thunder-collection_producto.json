@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "producto",
-    "dateExported": "2024-03-10T03:37:28.089Z",
+    "dateExported": "2024-03-10T21:45:00.180Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,17 +14,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-09T01:22:41.533Z",
-            "modified": "2024-03-10T03:37:21.619Z",
+            "modified": "2024-03-10T20:11:04.788Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"escoba\",\n  \"precio\":12.92,\n  \"cantidad\":12,\n  \"empresa\":\"Sully\",\n  \"descripcion\":\"Sirve para barrer\",\n  \"categoria\":\"limpieza\"\n}",
+                "raw": "{\n  \"nombre\":\"TV 90 pulgadas\",\n  \"precio\":10000,\n  \"cantidad\":26,\n  \"empresa\":\"Samsung\",\n  \"descripcion\":\"Para ver la de los vangadores\",\n  \"categoria\":\"a\"\n}",
                 "form": []
             },
             "reqType": "post",
@@ -39,11 +39,11 @@
             "method": "GET",
             "sortNum": 20000,
             "created": "2024-03-09T01:42:44.391Z",
-            "modified": "2024-03-10T03:37:17.255Z",
+            "modified": "2024-03-10T19:07:00.353Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
                 }
             ],
             "params": [],
@@ -59,11 +59,11 @@
             "method": "GET",
             "sortNum": 50000,
             "created": "2024-03-09T01:46:00.944Z",
-            "modified": "2024-03-10T03:36:59.398Z",
+            "modified": "2024-03-10T19:20:44.335Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
                 }
             ],
             "params": [],
@@ -75,11 +75,11 @@
             "colId": "dbef0ccd-3611-490a-857f-c3ddb03d5244",
             "containerId": "",
             "name": "get_productoByCat",
-            "url": "http://localhost:8080/apiProyecto/v1/productos/categoria?categoria=limpieza",
+            "url": "http://localhost:8080/apiProyecto/v1/productos/categoria?categoria=a",
             "method": "GET",
             "sortNum": 60000,
             "created": "2024-03-09T01:47:50.019Z",
-            "modified": "2024-03-10T03:36:55.045Z",
+            "modified": "2024-03-10T20:11:37.885Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -89,7 +89,7 @@
             "params": [
                 {
                     "name": "categoria",
-                    "value": "limpieza",
+                    "value": "a",
                     "isPath": false
                 }
             ],
@@ -105,11 +105,11 @@
             "method": "GET",
             "sortNum": 70000,
             "created": "2024-03-09T08:06:05.453Z",
-            "modified": "2024-03-10T03:36:50.365Z",
+            "modified": "2024-03-10T09:51:25.863Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NzE4MDksImV4cCI6MTcwOTk4MjYwOX0.kkfXvzDLnaJqPmiG5va4MgAtq9ozXdRuphMxa7esXyI"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwNjQyNjksImV4cCI6MTcxMDA3NTA2OX0.sf9tKGjvrF3IvMn108A-j1kcnuVPKyJoumnLQOOHibk"
                 }
             ],
             "params": [],

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoria",
-    "dateExported": "2024-03-10T03:38:38.465Z",
+    "dateExported": "2024-03-10T21:44:51.646Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,21 +10,21 @@
             "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "post_category",
-            "url": "http://localhost:8080/apiProyecto/v1/cat",
+            "url": "http://localhost:8080/apiProyecto/v1/categorias",
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-09T01:13:24.236Z",
-            "modified": "2024-03-10T03:37:41.368Z",
+            "modified": "2024-03-10T20:27:08.416Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NTQ4OTMsImV4cCI6MTcwOTk2NTY5M30.1uunMfS-_Rie-rH5CnvJau4PNMnc3X-6qXn-CFoIcBo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"categoria\":\"a\",\n  \"edad\":\"13 - en adelante\"\n}",
+                "raw": "{\n  \"categoria\":\"limpieza\",\n  \"edad\":\"mayores de 13 a;os\"\n}",
                 "form": []
             },
             "reqType": "post",
@@ -35,21 +35,21 @@
             "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "put_category",
-            "url": "http://localhost:8080/apiProyecto/v1/cat?categoria=Alimineticia",
+            "url": "http://localhost:8080/apiProyecto/v1/categorias?categoria=limpieza",
             "method": "PUT",
             "sortNum": 20000,
             "created": "2024-03-09T01:13:24.238Z",
-            "modified": "2024-03-10T03:37:46.750Z",
+            "modified": "2024-03-10T20:27:37.172Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NzAzNTMsImV4cCI6MTcwOTk4MTE1M30.LVKvgvq8kGCojI_qNFWizKY-p-0Jc8Wmqh1ONFTf6aQ"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
                 }
             ],
             "params": [
                 {
                     "name": "categoria",
-                    "value": "Alimineticia",
+                    "value": "limpieza",
                     "isPath": false
                 }
             ],
@@ -66,21 +66,21 @@
             "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "delete_category",
-            "url": "http://localhost:8080/apiProyecto/v1/cat?categoria=limpieza",
+            "url": "http://localhost:8080/apiProyecto/v1/categoria?categoria=limpieza32",
             "method": "DELETE",
             "sortNum": 30000,
             "created": "2024-03-09T01:13:24.239Z",
-            "modified": "2024-03-10T03:37:51.868Z",
+            "modified": "2024-03-10T20:10:29.318Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
                 }
             ],
             "params": [
                 {
                     "name": "categoria",
-                    "value": "limpieza",
+                    "value": "limpieza32",
                     "isPath": false
                 }
             ],
@@ -92,12 +92,17 @@
             "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "get_categoria",
-            "url": "http://localhost:8080/apiProyecto/v1/cat",
+            "url": "http://localhost:8080/apiProyecto/v1/categoria",
             "method": "GET",
             "sortNum": 40000,
             "created": "2024-03-09T01:13:53.544Z",
-            "modified": "2024-03-10T03:38:29.621Z",
-            "headers": [],
+            "modified": "2024-03-10T19:18:36.508Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkZmQxNTliMDg4MDgzODQ3Yzc0NTkiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwOTcwMDEsImV4cCI6MTcxMDEwNzgwMX0.mgljsdf8e_MZZMLgNaLirxDpCVT1_zQU_YhXuLRBcuw"
+                }
+            ],
             "params": [],
             "reqType": "get",
             "tests": []
