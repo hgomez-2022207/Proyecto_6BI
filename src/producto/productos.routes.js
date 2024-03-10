@@ -1,7 +1,7 @@
 import {Router} from 'express';
 import {check} from 'express-validator';
 import { validarCampos } from '../middlewares/validar-campos.js';
-import {productoPost, productoGet, productoPut, productoDelete, productoByName, cantidadNull, productoByCat} from './producto.controller.js';
+import {productoPost, productoGet, productoPut, productoDelete, productoByName, cantidadNull, productoByCat, getMasVendidos} from './producto.controller.js';
 
 import {existeProductoById, productoExist} from '../helpers/db-validators.js';
 
@@ -36,7 +36,7 @@ router.get(
 router.get("/",[validarJWT,],productoGet);
 
 router.put(
-    "/:id",
+    "/",
     [
         check("nombre","El nombre del producto").not().isEmpty(),
         check('precio','El precio de producto debe ser registrado').not().isEmpty(),
@@ -52,10 +52,8 @@ router.put(
 );  
 
 router.delete(
-    "/:id",
+    "/",
     [
-        check('id','Este producto no esta disponible').isMongoId(),
-        check('id').custom(existeProductoById),
         validarJWT,
         tieneRolAutorizado('ADMIN_ROLE'),
         
@@ -75,5 +73,7 @@ router.get('/categoria',
         tieneRolAutorizado('ADMIN_ROLE'),
     ],productoByCat
 );
+
+router.get('/vendidos',[validarJWT],getMasVendidos);
 
 export default router;

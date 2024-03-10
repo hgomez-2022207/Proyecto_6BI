@@ -1,37 +1,40 @@
-const {Schema, model} = require('mongoose');
+import mongoose from "mongoose";
 
-const facturaSchema = Schema({
-    numero:{
-        type:String,
-        required:['Numero de factura']
-    },
+const facturaSchema = mongoose.Schema({
     fecha:{
         type:Date,
         required:['Fecha de compra']
     },
-    cliente:{
+    correo:{
         type:String,
-        required:['Nombre del comprador']
+        required:['email del comprador']
     },
     productos:{
-        type:String,
-        required:['Productos comprados']
+        type: [String],
+    },
+    cantidad:{
+        type:[Number],
+    },
+    precio:{
+        type:[Number],
     },
     metodoP:{
         type:String,
         required:['Metodo de pago']
     },
-    precios:{
-        type: Number,
-        required:['Total a pagar']
+    total:{
+        type: Number
+    },
+    estado:{
+        type:String,
+        default: "En proceso"
     }
-
 });
 
 facturaSchema.methods.toJSON = function(){
     const{ __v, numero, _id, ...factura} = this.toObject();
-    producto.uid = _id;
+    factura.uid = _id;
     return factura;
 };
 
-module.exports = model('Factura', facturaSchema);
+export default mongoose.model('Factura', facturaSchema);

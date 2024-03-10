@@ -1,60 +1,40 @@
 {
     "client": "Thunder Client",
     "collectionName": "Administrador",
-    "dateExported": "2024-03-05T23:18:03.459Z",
+    "dateExported": "2024-03-10T03:40:24.065Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "b33cac84-b691-4e1f-8dbc-87b64b8d6737",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
+            "_id": "925a346d-57d1-4bcf-befe-e1fef36953cf",
+            "colId": "837decce-eea2-4d99-ad60-291951033494",
             "containerId": "",
             "name": "post usuario_admin",
-            "url": "http://localhost:8080/api/usuarios/admin",
+            "url": "http://localhost:8080/apiProyecto/v1/usuarios/admin",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-04T23:02:14.362Z",
-            "modified": "2024-03-04T23:15:33.089Z",
+            "created": "2024-03-07T07:58:50.243Z",
+            "modified": "2024-03-10T03:39:44.090Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Naomy Escobar\",\n  \"correo\": \"naminickol@gmail.com\",\n  \"password\":\"129123\"\n}\n",
+                "raw": "{\n  \"nombre\": \"Naomy Escobar\",\n  \"correo\": \"mao@gmail.com\",\n  \"password\":\"129123\"\n}\n",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "96a0ab0b-ab51-419e-b389-cd4fde0fe216",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
-            "containerId": "",
-            "name": "post usuario_cliente",
-            "url": "http://localhost:8080/api/usuarios/cliente",
-            "method": "POST",
-            "sortNum": 20000,
-            "created": "2024-03-04T23:09:24.695Z",
-            "modified": "2024-03-04T23:21:03.206Z",
-            "headers": [],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"nombre\": \"Naomy Escobar\",\n  \"correo\": \"aominickol@gmail.com\",\n  \"password\":\"129123\"\n}\n",
-                "form": []
-            },
-            "reqType": "post",
-            "tests": []
-        },
-        {
-            "_id": "1a3e8d0b-1248-4fca-89a9-1900e7a7aea6",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
+            "_id": "11b0ff95-85fe-4aaa-8732-76170dfb33f2",
+            "colId": "837decce-eea2-4d99-ad60-291951033494",
             "containerId": "",
             "name": "get usuario",
-            "url": "http://localhost:8080/api/usuarios?desde=0&limite=20",
+            "url": "http://localhost:8080/apiProyecto/v1/usuarios?desde=0&limite=20",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-03-04T23:02:14.363Z",
-            "modified": "2024-03-04T23:10:56.553Z",
+            "created": "2024-03-07T07:58:50.245Z",
+            "modified": "2024-03-10T03:39:47.737Z",
             "headers": [],
             "params": [
                 {
@@ -72,143 +52,64 @@
             "tests": []
         },
         {
-            "_id": "08062672-7b42-4130-a444-9f3334f8d8f4",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
+            "_id": "cd1eb660-0691-4f62-a286-e1fd13b4dcd7",
+            "colId": "837decce-eea2-4d99-ad60-291951033494",
             "containerId": "",
-            "name": "get usuarioById",
-            "url": "http://localhost:3000/api/usuarios/65d2aa07eb0318f47fcb856e",
+            "name": "get usuarioByName",
+            "url": "http://localhost:8080/apiProyecto/v1/usuarios/name?correo=naminickol@gmail.com",
             "method": "GET",
-            "sortNum": 50000,
-            "created": "2024-03-04T23:02:14.364Z",
-            "modified": "2024-03-04T23:02:14.364Z",
+            "sortNum": 45000,
+            "created": "2024-03-08T07:42:28.100Z",
+            "modified": "2024-03-10T03:39:52.826Z",
             "headers": [],
-            "params": [],
+            "params": [
+                {
+                    "name": "correo",
+                    "value": "naminickol@gmail.com",
+                    "isPath": false
+                }
+            ],
+            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "78538bbf-cb3d-441e-ab9c-1fadff770709",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
+            "_id": "6aeb382a-33c2-4f24-9b21-3a25bbc71d02",
+            "colId": "837decce-eea2-4d99-ad60-291951033494",
             "containerId": "",
-            "name": "put Usuario",
-            "url": "http://localhost:3000/api/usuarios",
+            "name": "put Admin",
+            "url": "http://localhost:8080/apiProyecto/v1/usuarios/admin",
             "method": "PUT",
             "sortNum": 60000,
-            "created": "2024-03-04T23:02:14.365Z",
-            "modified": "2024-03-04T23:16:45.401Z",
+            "created": "2024-03-07T07:58:50.247Z",
+            "modified": "2024-03-10T03:39:56.289Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"Linda Garma\",\n  \"correo\": \"mayteGarma@gmail.com\",\n  \"password\":\"129123\",\n  \"role\":\"CLIENTE_ROLE\"\n}",
+                "raw": "{\n  \"correo\":\"marcow@tulio.com\",\n  \"password\":\"129123ss\",\n  \n  \"nombre\": \"Mario Garma\",\n  \"newCorreo\": \"marow@tulio.com\",\n  \"newPassword\":\"129123ss\",\n  \"role\":\"CLIENTE_ROLE\"\n}",
                 "form": []
             },
             "reqType": "put",
             "tests": []
         },
         {
-            "_id": "49bbfbcf-711c-4dd4-984a-b7ddacb974c9",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
+            "_id": "638a152c-d78a-464f-ac96-ceef1863f916",
+            "colId": "837decce-eea2-4d99-ad60-291951033494",
             "containerId": "",
-            "name": "delete usuario",
-            "url": "http://localhost:3000/api/usuarios/65d2aa07eb0318f47fcb856e",
+            "name": "delete admin",
+            "url": "http://localhost:8080/apiProyecto/v1/usuarios",
             "method": "DELETE",
             "sortNum": 70000,
-            "created": "2024-03-04T23:02:14.366Z",
-            "modified": "2024-03-04T23:02:14.366Z",
-            "headers": [],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "c7e1653a-026e-45f5-bcd9-7c3993ad986e",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
-            "containerId": "",
-            "name": "post producto",
-            "url": "http://localhost:8080/api/productos",
-            "method": "POST",
-            "sortNum": 80000,
-            "created": "2024-03-04T23:02:14.367Z",
-            "modified": "2024-03-05T22:01:59.275Z",
+            "created": "2024-03-07T07:58:50.248Z",
+            "modified": "2024-03-10T03:40:00.022Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"sssc\",\n  \"precio\":5,\n  \"cantidad\":30,\n  \"empresa\":\"Foca\",\n  \"descripcion\":\"jabon en polvo para lavar ropa y trastes\",\n  \"categoria\":\"a\"\n}",
+                "raw": "{\n  \"correo\":\"marcow@tulio.com\",\n  \"password\":\"129123ss\"\n}",
                 "form": []
             },
-            "reqType": "post",
-            "tests": []
-        },
-        {
-            "_id": "d6662586-d36f-465c-9878-9fbdc97a987e",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
-            "containerId": "",
-            "name": "get Productos",
-            "url": "http://localhost:3000/api/productos?desde=1&limite=10  ",
-            "method": "GET",
-            "sortNum": 90000,
-            "created": "2024-03-04T23:02:14.368Z",
-            "modified": "2024-03-04T23:02:14.368Z",
-            "headers": [],
-            "params": [
-                {
-                    "name": "desde",
-                    "value": "1",
-                    "isPath": false
-                },
-                {
-                    "name": "limite",
-                    "value": "10  ",
-                    "isPath": false
-                }
-            ],
-            "tests": []
-        },
-        {
-            "_id": "9b3ff444-ba14-4a59-8c1b-7294649ba736",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
-            "containerId": "",
-            "name": "get productoById",
-            "url": "http://localhost:3000/api/productos/65d2c061c2a46f7f280f84cd",
-            "method": "GET",
-            "sortNum": 100000,
-            "created": "2024-03-04T23:02:14.369Z",
-            "modified": "2024-03-04T23:02:14.369Z",
-            "headers": [],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "2cf47985-75e0-4fcb-a0a4-996652936635",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
-            "containerId": "",
-            "name": "put producto",
-            "url": "http://localhost:3000/api/productos/65d2c061c2a46f7f280f84cd",
-            "method": "PUT",
-            "sortNum": 110000,
-            "created": "2024-03-04T23:02:14.370Z",
-            "modified": "2024-03-04T23:02:14.370Z",
-            "headers": [],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"nombre\":\"Laky de Camaron\",\n  \"precio\":1,\n  \"cantidad\":40,\n  \"empresa\":\"Maller\",\n  \"descripcion\":\"Sopas instantaneas para comer en cualquier momento de maller\",\n  \"categoria\":\"Alimentos\"\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "9da7c5a7-c84f-4c2b-a888-8bdd564c7975",
-            "colId": "fea1520f-f57b-4f23-9793-dc102f65cd74",
-            "containerId": "",
-            "name": "delete producto",
-            "url": "http://localhost:3000/api/productos/65d2c061c2a46f7f280f84cd",
-            "method": "DELETE",
-            "sortNum": 120000,
-            "created": "2024-03-04T23:02:14.372Z",
-            "modified": "2024-03-04T23:02:14.372Z",
-            "headers": [],
-            "params": [],
+            "reqType": "del",
             "tests": []
         }
     ]

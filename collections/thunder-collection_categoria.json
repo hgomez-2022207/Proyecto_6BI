@@ -1,75 +1,105 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoria",
-    "dateExported": "2024-03-08T08:03:54.701Z",
+    "dateExported": "2024-03-10T03:38:38.465Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "1c859678-9fec-4ba8-bb9c-b0fecd901f1a",
-            "colId": "b502f299-4248-4294-916a-93a1aca8587a",
+            "_id": "b92daa11-4c8c-4209-866a-ebf4b5879670",
+            "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "post_category",
-            "url": "http://localhost:8080/tienda/v1/cat",
+            "url": "http://localhost:8080/apiProyecto/v1/cat",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-08T07:53:14.151Z",
-            "modified": "2024-03-08T07:53:53.379Z",
-            "headers": [],
+            "created": "2024-03-09T01:13:24.236Z",
+            "modified": "2024-03-10T03:37:41.368Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NTQ4OTMsImV4cCI6MTcwOTk2NTY5M30.1uunMfS-_Rie-rH5CnvJau4PNMnc3X-6qXn-CFoIcBo"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"categoria\":\"qwe\",\n  \"edad\":\"13 - en adelante\"\n}",
+                "raw": "{\n  \"categoria\":\"a\",\n  \"edad\":\"13 - en adelante\"\n}",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "0d966f97-6ae2-4e9a-b7b7-c8e3625aa7d6",
-            "colId": "b502f299-4248-4294-916a-93a1aca8587a",
+            "_id": "1cfa8b6d-d6c3-46ca-94fc-86c3ed232494",
+            "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "put_category",
-            "url": "http://localhost:8080/tienda/v1/cat?categoria=qwe",
+            "url": "http://localhost:8080/apiProyecto/v1/cat?categoria=Alimineticia",
             "method": "PUT",
             "sortNum": 20000,
-            "created": "2024-03-08T07:53:14.155Z",
-            "modified": "2024-03-08T07:56:00.414Z",
-            "headers": [],
+            "created": "2024-03-09T01:13:24.238Z",
+            "modified": "2024-03-10T03:37:46.750Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NzAzNTMsImV4cCI6MTcwOTk4MTE1M30.LVKvgvq8kGCojI_qNFWizKY-p-0Jc8Wmqh1ONFTf6aQ"
+                }
+            ],
             "params": [
                 {
                     "name": "categoria",
-                    "value": "qwe",
+                    "value": "Alimineticia",
                     "isPath": false
                 }
             ],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"newcategoria\":\"abb\",\n  \"edad\":\"1@#$\"\n}",
+                "raw": "{\n  \"newcategoria\":\"limpieza2\",\n  \"edad\":\"1@#$\"\n}",
                 "form": []
             },
             "reqType": "put",
             "tests": []
         },
         {
-            "_id": "3843ac58-0738-4d19-a05e-69b0f53e5606",
-            "colId": "b502f299-4248-4294-916a-93a1aca8587a",
+            "_id": "1144f8f3-6479-4583-93c4-c1e60ddce798",
+            "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "delete_category",
-            "url": "http://localhost:8080/tienda/v1/cat?categoria=abb",
+            "url": "http://localhost:8080/apiProyecto/v1/cat?categoria=limpieza",
             "method": "DELETE",
             "sortNum": 30000,
-            "created": "2024-03-08T07:53:14.156Z",
-            "modified": "2024-03-08T07:56:23.252Z",
-            "headers": [],
+            "created": "2024-03-09T01:13:24.239Z",
+            "modified": "2024-03-10T03:37:51.868Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MDk5NDg0MzQsImV4cCI6MTcwOTk1OTIzNH0.hUFapeejEybfAXEXFhZ4Q51nXXUTDeD0cetAJRhVjUM"
+                }
+            ],
             "params": [
                 {
                     "name": "categoria",
-                    "value": "abb",
+                    "value": "limpieza",
                     "isPath": false
                 }
             ],
             "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "315bed10-7ef8-4df4-bc8c-680bfd79a80e",
+            "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
+            "containerId": "",
+            "name": "get_categoria",
+            "url": "http://localhost:8080/apiProyecto/v1/cat",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-03-09T01:13:53.544Z",
+            "modified": "2024-03-10T03:38:29.621Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
             "tests": []
         }
     ]

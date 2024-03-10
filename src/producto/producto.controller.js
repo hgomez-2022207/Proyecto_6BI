@@ -92,11 +92,31 @@ export const productoByCat = async(req, res = response) =>{
 }
 
 export const productoPut = async (req, res = response) =>{
-    const{ id } = req.params;
-    const { _id, ...nombre} = req.body;
+    const{ nombre } = req.query;
+    const { newNombre,precio,cantidad,empresa,descripcion,categoria} = req.body;
+    const p = await Producto.findOne({nombre});
+    const c = await Categoria.findOne({categoria});
 
-    await Producto.findByIdAndUpdate(id, nombre)
-    const producto = await Producto.findByIdAndUpdate(id, nombre);
+    if(!p){
+        return res.status(404).json({
+            msg: "Este producto que desea editar no existe"
+        });
+    }
+
+    if(!c){
+        return res.status(404).json({
+            msg: "Categoria no valida"
+        });
+    }
+
+    p.nombre = newNombre;
+    p.precio = precio;
+    p.cantidad = cantidad;
+    p.empresa = empresa;
+    p.descripcion = descripcion;
+    p.categoria = categoria
+
+    const producto = await Producto.findByIdAndUpdate(p.id, p);
 
     res.status(200).json({
         msg: "Los datos del producto han sido actualizados",
@@ -104,15 +124,21 @@ export const productoPut = async (req, res = response) =>{
     });
 }
 
-export const productoDelete = async(req,res = response) => {
-    const { id } = req.params;
-    const producto = await Producto.findByIdAndUpdate(id,{estado:false});
-    const productoAutentico = req.producto;
+export const productoDelete = async (req, res = response) => {
+    const { nombre } = req.query;
+    const productos = await Producto.findOne({ nombre });
+    
+    if (productos.length === 0) {
+        return res.status(404).json({
+            msg: "Este producto no existe"
+        });
+    }
 
+    await Producto.findByIdAndUpdate(productos.id, { estado: false });
+    
     res.status(200).json({
-        msg: "Informacion del producto invalidada",
-        producto,
-        productoAutentico
+        msg: "Información del producto eliminada",
+        productos
     });
 }
 
@@ -120,7 +146,7 @@ export const cantidadNull = async(req, res) => {
     try{
         const p = await Producto.find({cantidad:0});
         if(p.length === 0 || !p){
-            return res.status(200).json({
+            return res.status(404).json({
                 msg: 'No existen productos agotados'
             });
         }
@@ -134,3 +160,25 @@ export const cantidadNull = async(req, res) => {
         });
     }
 }
+
+export const getMasVendidos = async (req, res) => {
+    try {
+        const masVendidos = await Producto.find({}).sort({ vendidos: -1 });
+
+        if (!masVendidos || masVendidos.length === 0) {
+            return res.status(200).json({
+                msg: 'No hay productos disponibles'
+            });
+        }
+
+        return res.status(200).json({
+            masVendidos
+        });
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            error: "Error interno del servidor"
+        });
+    }
+};

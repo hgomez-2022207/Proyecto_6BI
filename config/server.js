@@ -11,16 +11,22 @@ import userRoute from '../src/usuario/usuario.routes.js';
 import authRoute from '../src/auth/auth.route.js'
 import categoryRoute from '../src/categoria/categoria.routes.js';
 import productoRoute from '../src/producto/productos.routes.js'
+import facturaRoute from '../src/factura/factura.routes.js';
+import compraRoute from '../src/compras/compras.route.js'
 
 class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
         this.usuarioPath = '/apiProyecto/v1/usuarios';
-        this.categoriaPath = '/apiProyecto/v1/categorias';
+        this.categoriaPath = '/apiProyecto/v1/categoria';
         this.facturaPath = '/apiProyecto/v1/factura';
         this.productoPath = '/apiProyecto/v1/productos';
         this.authPath = '/apiProyecto/v1/auth';
+<<<<<<< HEAD
+=======
+        this.compraPath = '/apiProyecto/v1/compra';
+>>>>>>> 78ad9a07328821fa60fe03824aeaa143c1ccd491
 
 
         this.conectarDB();
@@ -45,7 +51,13 @@ class Server{
         this.app.use(this.usuarioPath,userRoute),
         this.app.use(this.authPath,authRoute),
         this.app.use(this.categoriaPath,categoryRoute),
+<<<<<<< HEAD
         this.app.use(this.productoPath,productoRoute)
+=======
+        this.app.use(this.productoPath,productoRoute),
+        this.app.use(this.facturaPath,facturaRoute),
+        this.app.use(this.compraPath,compraRoute)
+>>>>>>> 78ad9a07328821fa60fe03824aeaa143c1ccd491
     }
 
     listen(){
