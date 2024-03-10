@@ -1,0 +1,60 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "compra",
+    "dateExported": "2024-03-10T09:52:12.256Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "cbf04162-21a9-4241-be27-9323fc41e769",
+            "colId": "0dc81ac7-8315-41ca-860b-9796f61f9ddc",
+            "containerId": "",
+            "name": "put_compra",
+            "url": "http://localhost:8080/apiProyecto/v1/compra?correo=maytema@gmail.com",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-03-10T07:03:39.638Z",
+            "modified": "2024-03-10T08:00:43.529Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhZDgyMzI3MDEyNTc4ZDBkYTBjOGYiLCJlbWFpbCI6Im1hb0BnbWFpbC5jb20iLCJpYXQiOjE3MTAwNTA5MjcsImV4cCI6MTcxMDA2MTcyN30.zsPQduub190_heck3-gBBNuuwg2yvx9BMOmP8TwvPS4"
+                }
+            ],
+            "params": [
+                {
+                    "name": "correo",
+                    "value": "maytema@gmail.com",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Pan sandwich\",\n  \"cantidad\":12\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "745db691-41e2-480f-97a7-ddd05768bc76",
+            "colId": "0dc81ac7-8315-41ca-860b-9796f61f9ddc",
+            "containerId": "",
+            "name": "post_pdfFactura",
+            "url": "http://localhost:8080/apiProyecto/v1/compra/registro/pdf",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-10T08:53:20.822Z",
+            "modified": "2024-03-10T09:02:35.982Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\":\"maytema@gmail.com\"\n}",
+                "form": []
+            },
+            "reqType": "get",
+            "tests": []
+        }
+    ]
+}
