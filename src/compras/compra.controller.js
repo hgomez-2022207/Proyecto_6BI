@@ -8,12 +8,12 @@ import fs from 'fs';
 export const compraPut = async (req, res = response) =>{
     const{ correo } = req.query;
     const {nombre,cantidad} = req.body;
-    const f = await Factura.findOne({correo});
-    const p = await Producto.findOne({nombre});
+    const f = await Factura.findOne({correo, estado:'En proceso'});
+    const p = await Producto.findOne({nombre, estado: true});
 
     if(!f){
         return res.status(404).json({
-            msg: "Correo invalido no existe en el registro de compra"
+            msg: "Correo invalido no existe en el registro de compra o factura"
         });
     }
 
@@ -52,9 +52,6 @@ export const compraPut = async (req, res = response) =>{
     await f.save();
     await p.save();
 
-    //const producto = await Factura.findByIdAndUpdate(p.id, p);
-    //const factura = await Factura.findByIdAndUpdate(f.id, f);
-
     res.status(200).json({
         msg: "Los datos de la factura han sido actualizados",
         factura:f,
@@ -65,7 +62,7 @@ export const compraPut = async (req, res = response) =>{
 export const generarPDF = async (req, res) => {
     const { correo } = req.body;
     try {
-        const factura = await Factura.findOne({ correo: correo });
+        const factura = await Factura.findOne({ correo: correo, estado: 'En proceso'});
 
         if (!factura) {
             return res.status(404).json({ msg: 'No se encontró la factura' });
@@ -93,7 +90,7 @@ export const generarPDF = async (req, res) => {
         doc.text(`Precio: ${factura.precio}`);
         doc.text(`Total: ${factura.total}`);
         
-        factura.estado = false;
+        factura.estado = 'Compra concretada';
 
         await factura.save();
 
