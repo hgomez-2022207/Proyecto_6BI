@@ -27,7 +27,7 @@ export const login = async (req, res) => {
 
         const validPassword = bcryptjs.compareSync(password, user.password);
 
-        if(user.password !== password){
+        if(!validPassword){
             return res.status(400).json({
                 msg: 'Clave incorrecta'
             });
