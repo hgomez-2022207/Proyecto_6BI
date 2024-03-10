@@ -106,9 +106,9 @@ export const usuarioPut = async (req, res = response) =>{
 }
 
 export const clientePut = async (req, res = response) =>{
-    const { correo,password,nombre, newCorreo ,newPassword} = req.body;
+    const {correo, password, nombre, newCorreo, newPassword, role} = req.body;
 
-    const user = await Usuario.findOne({correo})
+    const user = await Usuario.findOne({correo});
 
     if(!user){
         console.log(user)
@@ -116,6 +116,8 @@ export const clientePut = async (req, res = response) =>{
             msg: 'Usuario no existente'
         });
     }
+
+    const salt = bcryptjs.genSaltSync();
 
     const validPassword = bcryptjs.compareSync(password, user.password);
     
@@ -126,11 +128,15 @@ export const clientePut = async (req, res = response) =>{
         });
     }
 
-    user.nombre = nombre;
-    user.correo = newCorreo;
-    user.password = newPassword;
+    user.password = bcryptjs.hashSync(newPassword,salt);
 
+    user.correo = newCorreo;
+    user.nombre = nombre;
+    user.role = role
+
+    
     const usuario = await Usuario.findByIdAndUpdate(user.id, user);
+
     res.status(200).json({
         msg: "Los datos del usuario han sido actualizados",
         user,
@@ -149,6 +155,7 @@ export const usuarioDelete = async(req, res = response) => {
         });
     }
 
+    const salt = bcryptjs.genSaltSync();
     const validPassword = bcryptjs.compareSync(password, user.password);
     
 
