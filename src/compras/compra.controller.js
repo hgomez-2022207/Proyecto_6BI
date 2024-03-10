@@ -2,6 +2,8 @@ import bcryptjs from 'bcryptjs';
 import Factura from '../factura/factura.js';
 import Producto from '../producto/productos.model.js';
 import {response} from 'express';
+import PDFDocument from 'pdfkit';
+import fs from 'fs';
 
 export const compraPut = async (req, res = response) =>{
     const{ correo } = req.query;
@@ -59,3 +61,47 @@ export const compraPut = async (req, res = response) =>{
         producto:p
     });
 }
+
+export const generarPDF = async (req, res) => {
+    const { correo } = req.body;
+    try {
+        const factura = await Factura.findOne({ correo: correo });
+
+        if (!factura) {
+            return res.status(404).json({ msg: 'No se encontró la factura' });
+        }
+
+        const doc = new PDFDocument();
+        const directorio = process.env.ARCHIVOS_DIR;
+
+        if (!directorio) {
+            throw new Error('La variable de entorno ARCHIVOS_DIR no está definida');
+        }
+
+        if (!fs.existsSync(directorio)) {
+            fs.mkdirSync(directorio, { recursive: true });
+        }
+
+        res.setHeader('Content-Disposition', 'attachment; filename="registro.pdf"');
+        const writeStream = fs.createWriteStream(`facturas/registro.pdf`);
+        doc.pipe(writeStream);
+
+        doc.text(`Fecha: ${factura.fecha}`);
+        doc.text(`Correo: ${factura.correo}`);
+        doc.text(`Productos: ${factura.productos}`);
+        doc.text(`Unidades: ${factura.cantidad}`);
+        doc.text(`Precio: ${factura.precio}`);
+        doc.text(`Total: ${factura.total}`);
+        
+
+        doc.end();
+
+        writeStream.on('finish', () => {
+            res.status(200).json({ msg: 'El PDF se generó correctamente' });
+        });
+    } catch (error) {
+        console.error('Error al generar el PDF:', error);
+        res.status(500).json({ msg: 'Error al generar el PDF' });
+    }
+};
+
