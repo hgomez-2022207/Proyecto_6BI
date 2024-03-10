@@ -16,12 +16,12 @@ class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.usuarioPath = '/tienda/v1/usuarios';
-        this.categoriaPath = '/tienda/v1/categorias';
-        this.facturaPath = '/tienda/v1/factura';
-        this.productoPath = '/tienda/v1/productos';
-        this.authPath = '/tienda/v1/auth';
-        this.categoryPath = '/tienda/v1/cat'
+        this.usuarioPath = '/apiProyecto/v1/usuarios';
+        this.categoriaPath = '/apiProyecto/v1/categorias';
+        this.facturaPath = '/apiProyecto/v1/factura';
+        this.productoPath = '/apiProyecto/v1/productos';
+        this.authPath = '/apiProyecto/v1/auth';
+        this.categoryPath = '/apiProyecto/v1/cat'
 
 
         this.conectarDB();
@@ -47,9 +47,6 @@ class Server{
         this.app.use(this.authPath,authRoute),
         this.app.use(this.categoryPath,categoryRoute),
         this.app.use(this.productoPath,productoRoute)
-        //this.app.use(this.categoriaPath, require('../src/categoria/categoria.routes.js')),
-        //this.app.use(this.productoPath, require('../src/producto/productos.routes.js')),
-        //this.app.use(this.facturaPath, require('../src/factura/factura.routes.js'));
     }
 
     listen(){
