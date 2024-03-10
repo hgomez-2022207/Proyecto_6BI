@@ -32,7 +32,7 @@ const facturaSchema = mongoose.Schema({
 });
 
 facturaSchema.methods.toJSON = function(){
-    const{ __v, numero, _id, ...factura} = this.toObject();
+    const{ __v, _id, ...factura} = this.toObject();
     factura.uid = _id;
     return factura;
 };
