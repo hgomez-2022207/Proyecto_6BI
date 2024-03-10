@@ -26,8 +26,8 @@ const facturaSchema = mongoose.Schema({
         type: Number
     },
     estado:{
-        type:Boolean,
-        default: true
+        type:String,
+        default: "En proceso"
     }
 });
 
