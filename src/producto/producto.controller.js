@@ -146,7 +146,7 @@ export const cantidadNull = async(req, res) => {
     try{
         const p = await Producto.find({cantidad:0});
         if(p.length === 0 || !p){
-            return res.status(200).json({
+            return res.status(404).json({
                 msg: 'No existen productos agotados'
             });
         }
