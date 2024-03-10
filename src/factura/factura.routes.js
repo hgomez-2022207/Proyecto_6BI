@@ -14,7 +14,6 @@ router.post(
         check("fecha","Fecha de la compra").not().isEmpty(),
         check("correo","El correo del cliente").not().isEmpty(),
         check("metodoP","El metodo con el que va a pagar el cliente").not().isEmpty(),
-        check("correo").custom(existeEmail),
         validarCampos,
         validarJWT,
         tieneRolAutorizado('ADMIN_ROLE')

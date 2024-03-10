@@ -93,6 +93,9 @@ export const generarPDF = async (req, res) => {
         doc.text(`Precio: ${factura.precio}`);
         doc.text(`Total: ${factura.total}`);
         
+        factura.estado = false;
+
+        await factura.save();
 
         doc.end();
 
