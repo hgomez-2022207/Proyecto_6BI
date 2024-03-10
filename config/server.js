@@ -11,6 +11,8 @@ import userRoute from '../src/usuario/usuario.routes.js';
 import authRoute from '../src/auth/auth.route.js'
 import categoryRoute from '../src/categoria/categoria.routes.js';
 import productoRoute from '../src/producto/productos.routes.js'
+import facturaRoute from '../src/factura/factura.routes.js';
+import compraRoute from '../src/compras/compras.route.js'
 
 class Server{
     constructor(){
@@ -21,7 +23,8 @@ class Server{
         this.facturaPath = '/apiProyecto/v1/factura';
         this.productoPath = '/apiProyecto/v1/productos';
         this.authPath = '/apiProyecto/v1/auth';
-        this.categoryPath = '/apiProyecto/v1/cat'
+        this.categoryPath = '/apiProyecto/v1/cat';
+        this.compraPath = '/apiProyecto/v1/compra';
 
 
         this.conectarDB();
@@ -46,7 +49,9 @@ class Server{
         this.app.use(this.usuarioPath,userRoute),
         this.app.use(this.authPath,authRoute),
         this.app.use(this.categoryPath,categoryRoute),
-        this.app.use(this.productoPath,productoRoute)
+        this.app.use(this.productoPath,productoRoute),
+        this.app.use(this.facturaPath,facturaRoute),
+        this.app.use(this.compraPath,compraRoute)
     }
 
     listen(){
