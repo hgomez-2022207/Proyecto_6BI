@@ -85,9 +85,13 @@ export const generarPDF = async (req, res) => {
 
         doc.text(`Fecha: ${factura.fecha}`);
         doc.text(`Correo: ${factura.correo}`);
-        doc.text(`Productos: ${factura.productos}`);
-        doc.text(`Unidades: ${factura.cantidad}`);
-        doc.text(`Precio: ${factura.precio}`);
+
+        for (const det of factura.detalle) {
+            doc.text(`Productos: ${det.producto}`);
+            doc.text(`Unidades: ${det.cantidad}`);
+            doc.text(`Precio: ${det.precio}`);
+        }
+
         doc.text(`Total: ${factura.total}`);
         
         factura.estado = 'Compra concretada';
