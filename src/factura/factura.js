@@ -9,14 +9,14 @@ const facturaSchema = mongoose.Schema({
         type:String,
         required:['email del comprador']
     },
-    productos:{
-        type: [String],
-    },
-    cantidad:{
-        type:[Number],
-    },
-    precio:{
-        type:[Number],
+    detalle: {
+        type: [{
+            producto: { type: String, required: true },
+            precio: { type: Number, required: true },
+            cantidad: { type: Number, required: true },
+          
+        }],
+        _id: false,
     },
     metodoP:{
         type:String,

@@ -9,10 +9,17 @@ export const facturaPost = async (req,res) => {
     const factura = new Factura({fecha,correo,metodoP});
 
     const user = await Usuario.findOne({correo});
+    const f = await Factura.findOne({correo, estado: 'En proceso'});
 
     if(!user){
         return res.status('El usuario no existe').json({
             msg: "Este usuario no ha sido registrado"
+        });
+    }
+
+    if (f) {
+        return res.status(400).json({
+            msg: "Ya existe una factura en proceso para este correo."
         });
     }
 
