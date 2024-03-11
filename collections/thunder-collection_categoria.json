@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "categoria",
-    "dateExported": "2024-03-10T21:44:51.646Z",
+    "dateExported": "2024-03-11T03:10:44.873Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -10,11 +10,11 @@
             "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "post_category",
-            "url": "http://localhost:8080/apiProyecto/v1/categorias",
+            "url": "http://localhost:8080/apiProyecto/v1/categoria",
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-09T01:13:24.236Z",
-            "modified": "2024-03-10T20:27:08.416Z",
+            "modified": "2024-03-11T03:08:50.950Z",
             "headers": [
                 {
                     "name": "x-token",
@@ -35,11 +35,11 @@
             "colId": "a2c5039d-9339-400f-a457-75563c0358e9",
             "containerId": "",
             "name": "put_category",
-            "url": "http://localhost:8080/apiProyecto/v1/categorias?categoria=limpieza",
+            "url": "http://localhost:8080/apiProyecto/v1/categoria?categoria=limpieza",
             "method": "PUT",
             "sortNum": 20000,
             "created": "2024-03-09T01:13:24.238Z",
-            "modified": "2024-03-10T20:27:37.172Z",
+            "modified": "2024-03-11T03:08:45.171Z",
             "headers": [
                 {
                     "name": "x-token",
