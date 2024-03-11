@@ -29,19 +29,19 @@ export const compraPut = async (req, res = response) =>{
         });
     }
 
-    if (isNaN(cantidad) || isNaN(p.precio)) {
+    if (isNaN(cantidad) || isNaN(p.precio)){
         return res.status(400).json({
             msg: "La cantidad y el precio deben ser valores numéricos"
         });
     }
 
-    if (f.total === null || typeof f.total === 'undefined') {
+    if (f.total === null || typeof f.total === 'undefined'){
         f.total = 0;
     }    
 
-    f.productos.push(nombre);
-    f.cantidad.push(cantidad);
-    f.precio.push(p.precio);
+    const nuevoDetalle = {producto: nombre ,precio: p.precio, cantidad: cantidad};
+
+    f.detalle.push(nuevoDetalle);
 
     console.log(cantidad);
     console.log(p.precio);
